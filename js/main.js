@@ -6,7 +6,7 @@ function createList() {
     }
   ]
 
-  var newList = "<ol>";
+  var newList = "<ol id=\"table_contents\">";
   for (i = 0; i < links.length; i++) {
     let label = links[i].label;
     let url = links[i].url;
