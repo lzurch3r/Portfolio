@@ -1,7 +1,7 @@
 function createList() {
   const links = [
     {
-      label: "Week1 notes",
+      label: "Week 1 notes",
       url: "week1/index.html"
     }
   ]
