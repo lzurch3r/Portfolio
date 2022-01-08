@@ -2,8 +2,33 @@
 <html lang="en-US">
   <script src="js/main.js">
   </script>
+  <header>
+    <title>Lev Zurcher's Portfolio</title>
+  </header>
+  <style>
+    #portfolio_title {
+      font-size: 32pt;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    #portfolio_author {
+      font-size: 20pt;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    #table_contents {
+      font-size:16pt;
+    }
+    .banner {
+      background-color: rgba(39, 100, 198, 0.361);
+    }
+  </style>
 
-<body onload="createList()">
-  <ol id="table_contents"></ol>
-</body>
+  <body onload="createList()">
+    <div class="banner">
+      <section>
+        <span id="portfolio_title">WDD 330</span><br>
+        <span id="portfolio_author">Lev Zurcher</span>
+      </section>
+    </div>
+    <ol id="table_contents"></ol>
+  </body>
 </html>
