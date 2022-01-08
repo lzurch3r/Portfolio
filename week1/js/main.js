@@ -16,4 +16,6 @@ function createList() {
     newList += n;
   }
   newList += "</ol>";
+
+  list = newList;
 }
