@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Matt Rushton portfolio of work done for WDD 330 Web Frontend Development 2">
+        <meta name="author" content="Matt Rushton">
+        <title>Week 2 Team Activity | Matt Rushton</title> 
+        <link rel="shortcut icon" href="../favicon.ico">
+        <link rel="stylesheet" href="../css/small.css">
+        <link rel="stylesheet" href="../css/medium.css">
+    </head>
+    <body>
+        <main>
+            <h1>WDD 330 Team Activity Week 02</h1>
+            <h2>Display Text Function</h2>
+            <input id="textEntry" type="text"></input>
+            <button onclick="displayText()">Display It</button>
+            <div id="textDisplay"></div>
+
+            <h2>Number Sum</h2>
+            <p>Enter a number to sum all the numbers up to that number</p>
+            <label for="numberEntry">First Number</label>
+            <input type="text" id="numberEntry"></input>
+            <button onclick="sumNumber(document.getElementById('numberEntry').value)">Sum First Number</button>
+            <label for="inputNum2">Second Number</label>
+            <input type="text" id="inputNum2"></input>
+            <button onclick="addNumbers(document.getElementById('numberEntry').value, document.getElementById('inputNum2').value)">Add 1st and 2nd Numbers</button>
+            <div id="sumDisplay"></div>
+
+        </main>
+        <script src="/js/main.js"></script>
+    </body>
