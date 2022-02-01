@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>ToDo List</title>
+    <script src="todo.js"></script>
   </head>
   <body>
     <div id="todo_envelope">
@@ -12,9 +13,6 @@
       </div>
       <div id="todo_list_envelope">
         <table id="table_tasks">
-          <tr><td>First item</td></tr>
-          <tr><td>Second item</td></tr>
-          <tr><td>Third item</td></tr>
           <tr>
             <td><strong>Filter:</strong></td>
             <td><button type="button" name="buttons_filter">All</button></td>
@@ -25,7 +23,7 @@
         
         <span id="task_addition_envelope">
           <input type="text" id="input_task" placeholder="Write a new task here">
-          <button type="button" id="button_add_task">+</button>
+          <button type="button" id="button_add_task" value="add">+</button>
         </span>
       </div>
     </div>
