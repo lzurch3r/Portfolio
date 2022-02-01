@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <div id="todo_envelope">
+      <div id="todo_header_envelope">
+        <h1 id="todo_header">To-Do</h1>
+      </div>
+      <div id="todo_list_envelope">
+        <table id="table_tasks">
+          <tr><td>First item</td></tr>
+          <tr><td>Second item</td></tr>
+          <tr><td>Third item</td></tr>
+          <tr>
+            <td><strong>Filter:</strong></td>
+            <td><button type="button" name="buttons_filter">All</button></td>
+            <td><button type="button" name="buttons_filter">Active</button></td>
+            <td><button type="button" name="buttons_filter">Completed</button></td>
+          </tr>
+        </table>
+        
+        <span id="task_addition_envelope">
+          <input type="text" id="input_task" placeholder="Write a new task here">
+          <button type="button" id="button_add_task">+</button>
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
