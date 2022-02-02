@@ -32,5 +32,4 @@ function createTaskList() {
   taskList = newHTML + taskList;
 }
 
-console.log(document.getElementById('table_tasks').innerHTML);
-//createTaskList();
+createTaskList();
