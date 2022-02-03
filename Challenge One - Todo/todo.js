@@ -18,11 +18,6 @@ loadTaskList();
  ***************************/
 function addNewTask(name) {
   if (name) {
-<<<<<<< Updated upstream
-    let newList = taskList;
-    const newTask = new Task(name);
-    newList.unshift(newTask);
-=======
     
       let newList = readTaskList();
       //console.log(newList.length);
@@ -32,11 +27,6 @@ function addNewTask(name) {
       saveTaskList(newList);
       displayTaskList(readTaskList());
     }
->>>>>>> Stashed changes
-
-    taskList = newList;
-    displayTaskList(taskList);
-  }
   else {
     const message = "Error: invalid task name!";
     console.log(message);
@@ -62,11 +52,7 @@ function removeTask(taskName,index) {
         console.log(message);
       }
   }
-<<<<<<< Updated upstream
 }
-function displayTaskList(taskList) {
-=======
-}*/
 /***************************************
  * DISPLAY TASK LIST
  * Takes an array as a parameter and 
@@ -74,7 +60,6 @@ function displayTaskList(taskList) {
 function displayTaskList(list) {
   console.log(list.length);
   
->>>>>>> Stashed changes
   let newHTML = "";
   if (taskList.length > 0) {
     for (let i = 0; i < taskList.length; i = i + 1) {
@@ -96,12 +81,6 @@ function displayTaskList(list) {
 function clearTaskInput(id='input_task') {
   document.getElementById(id).value = null;
 }
-<<<<<<< Updated upstream
-function loadTaskList() {
-  //let taskList = [];
-  //console.log(taskList.length);
-  displayTaskList(taskList);
-=======
 
 function readTaskList() {
   const nameChallenge = "Challenge One";
@@ -136,7 +115,6 @@ function saveTaskList(list) {
   const taskList = list;
   localStorage.setItem(nameChallenge, JSON.stringify(taskList));
   console.log(JSON.stringify(taskList));
->>>>>>> Stashed changes
 }
 
 //createTaskList();
