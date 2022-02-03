@@ -39,13 +39,13 @@ function addNewTask(name) {
  **************************/
 function removeTask(taskName,index) {
   if (taskName && (index >= 0)) {
-    let newList = taskList;
+    let newList = readTaskList();
     
     if (taskName === newList[index].getTaskName()) {
       newList.splice(index,1);
 
-      taskList = newList;
-      displayTaskList(taskList);
+      saveTaskList(newList);
+      displayTaskList(readTaskList());
     }
     else {
         const message = "Error: couldn't find task in taskList!";
@@ -61,12 +61,12 @@ function displayTaskList(list) {
   console.log(list.length);
   
   let newHTML = "";
-  if (taskList.length > 0) {
-    for (let i = 0; i < taskList.length; i = i + 1) {
-      if (taskList[i].isActive()) {
+  if (list.length > 0) {
+    for (let i = 0; i < list.length; i = i + 1) {
+      if (list[i].isActive()) {
       newHTML += `<tr name="task_row"><td name="task_check"></td>` +
                  `<td name="task_name">` +
-                 taskList[i].getTaskName() + `</td><td name="task_remove" onclick="removeTask('` + taskList[i].getTaskName() + `',` + i + `)">X</td></tr>`;
+                 list[i].getTaskName() + `</td><td name="task_remove" onclick="removeTask('` + list[i].getTaskName() + `',` + i + `)">X</td></tr>`;
       }
       //console.log(newHTML);
     }
@@ -104,11 +104,12 @@ function loadTaskList() {
     if (readTaskList().length != 0) {
     console.log(readTaskList().length);
       displayTaskList(readTaskList());
-}    else {
-    const message = "<em>There's nothing here!</em>";
-    document.getElementById('table_tasks').innerHTML = message;
+    }    
+    else {
+      const message = "<em>There's nothing here!</em>";
+      document.getElementById('table_tasks').innerHTML = message;
+    }
   }
-}
 }
 function saveTaskList(list) {
   const nameChallenge = "Challenge One";
@@ -116,6 +117,11 @@ function saveTaskList(list) {
   localStorage.setItem(nameChallenge, JSON.stringify(taskList));
   console.log(JSON.stringify(taskList));
 }
+function clearAll() {
+  const blankList = [];
+  saveTaskList(blankList);
 
-//createTaskList();
-//addNewTask("New Task");
+  const message = "List length: " + readTaskList().length;
+  displayTaskList(readTaskList());
+  console.log(message);
+}
