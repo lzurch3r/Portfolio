@@ -79,15 +79,15 @@ function displayTaskList(list) {
   if (list.length > 0) {
     for (let i = 0; i < list.length; i = i + 1) {
       newHTML += `<tr name="task_row"><td name="task_active" onclick="changeTask('` + list[i].getTaskName() + `',` + i + `)">`;
-      if (list[i].isActive()) {
-        newHTML += `O`;
-      }
-      else if (!list[i].isActive()) {
-        newHTML += `X`;
-      } 
-      newHTML +=  `</td>` +
-                 `<td name="task_name">` +
-                 list[i].getTaskName() + `</td><td name="task_remove" onclick="removeTask('` + list[i].getTaskName() + `',` + i + `)">X</td></tr>`;
+      if (list[i].isActive())       { newHTML += `O`; }
+      else if (!list[i].isActive()) { newHTML += `X`; } 
+      
+      newHTML +=  `</td><td name="task_name">`;
+
+      if (list[i].isActive()) { newHTML += list[i].getTaskName(); }
+      else if (!list[i].isActive()) { newHTML += `<s>` + list[i].getTaskName() + `</s>` }
+      
+      newHTML += `</td><td name="task_remove" onclick="removeTask('` + list[i].getTaskName() + `',` + i + `)">X</td></tr>`;
       //console.log(newHTML);
     }
   }
