@@ -5,7 +5,7 @@ class Task {
   }
   isActive()     { return this.active;   }
   getTaskName()  { return this.taskName; }
-  completeTask() {
+  changeTask() {
     if (this.active === false) { this.active = true; }
     else this.active = false;
   }
@@ -13,8 +13,8 @@ class Task {
 
 /**************************
  * ADD NEW TASK
- * Takes a string as a parameter and adds a new Task object
- * to the tasklist
+ * Takes a string as a parameter
+ * and adds a new Task object to the tasklist
  ***************************/
 function addNewTask(name) {
   if (name) {
@@ -32,11 +32,16 @@ function addNewTask(name) {
     console.log(message);
   }
 }
+/************************************
+ * CHANGE TASK
+ * Takes a string and an integer as parameters
+ * and changes the active status of an item in the task list
+ *************************************/
 function changeTask(taskName,index) {
   if (taskName && (index >= 0)) {
     let newList = readTaskList();
     if (taskName === newList[index].getTaskName()) {
-      newList[index].completeTask();
+      newList[index].changeTask();
     }
 
     saveTaskList(newList);
@@ -45,8 +50,8 @@ function changeTask(taskName,index) {
 }
 /*************************
  * REMOVE TASK
- * Takes a string and a number as parameters and removes a Task
- * object from the taskList array
+ * Takes a string and an integer as parameters
+ * and removes a Task object from the task list
  **************************/
 function removeTask(taskName,index) {
   if (taskName && (index >= 0)) {
@@ -129,11 +134,14 @@ function loadTaskList() {
     if (readTaskList().length != 0) {
     //console.log(readTaskList().length);
       displayTaskList(readTaskList());
-    }    
+    }
     else {
       const message = "<em>There's nothing here!</em>";
       document.getElementById('table_tasks').innerHTML = message;
     }
+  }
+  else if (!readTaskList()) {
+    clearAll();
   }
 }
 /********************************************
