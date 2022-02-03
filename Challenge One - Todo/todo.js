@@ -1,7 +1,7 @@
 class Task {
-  constructor(name) {
+  constructor(name,active) {
     this.taskName = name;
-    this.active = true;
+    this.active = active;
   }
   isActive()     { return this.active; }
   getTaskName()  { return this.taskName; }
@@ -18,9 +18,21 @@ loadTaskList();
  ***************************/
 function addNewTask(name) {
   if (name) {
+<<<<<<< Updated upstream
     let newList = taskList;
     const newTask = new Task(name);
     newList.unshift(newTask);
+=======
+    
+      let newList = readTaskList();
+      //console.log(newList.length);
+      const newTask = new Task(name,true);
+      newList.unshift(newTask);
+
+      saveTaskList(newList);
+      displayTaskList(readTaskList());
+    }
+>>>>>>> Stashed changes
 
     taskList = newList;
     displayTaskList(taskList);
@@ -50,8 +62,19 @@ function removeTask(taskName,index) {
         console.log(message);
       }
   }
+<<<<<<< Updated upstream
 }
 function displayTaskList(taskList) {
+=======
+}*/
+/***************************************
+ * DISPLAY TASK LIST
+ * Takes an array as a parameter and 
+ ****************************************/
+function displayTaskList(list) {
+  console.log(list.length);
+  
+>>>>>>> Stashed changes
   let newHTML = "";
   if (taskList.length > 0) {
     for (let i = 0; i < taskList.length; i = i + 1) {
@@ -73,10 +96,47 @@ function displayTaskList(taskList) {
 function clearTaskInput(id='input_task') {
   document.getElementById(id).value = null;
 }
+<<<<<<< Updated upstream
 function loadTaskList() {
   //let taskList = [];
   //console.log(taskList.length);
   displayTaskList(taskList);
+=======
+
+function readTaskList() {
+  const nameChallenge = "Challenge One";
+  const data = localStorage.getItem(nameChallenge);
+  const taskList = JSON.parse(data);
+  let array = [];
+  
+  for (let i = 0; i < taskList.length; i++) {
+    const newTask = new Task(taskList[i].taskName,taskList[i].active);
+    array.push(newTask);
+  }
+
+  return array;
+}
+/********************************
+ * LOAD TASK LIST
+ * Reads from localStorage and displays the task list
+ *********************************/
+function loadTaskList() {
+  if (readTaskList()) {
+    if (readTaskList().length != 0) {
+    console.log(readTaskList().length);
+      displayTaskList(readTaskList());
+}    else {
+    const message = "<em>There's nothing here!</em>";
+    document.getElementById('table_tasks').innerHTML = message;
+  }
+}
+}
+function saveTaskList(list) {
+  const nameChallenge = "Challenge One";
+  const taskList = list;
+  localStorage.setItem(nameChallenge, JSON.stringify(taskList));
+  console.log(JSON.stringify(taskList));
+>>>>>>> Stashed changes
 }
 
 //createTaskList();
