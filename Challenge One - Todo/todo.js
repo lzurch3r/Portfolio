@@ -37,12 +37,15 @@ function addNewTask(name) {
  * Takes a string and an integer as parameters
  * and changes the active status of an item in the task list
  *************************************/
-function changeTask(taskName,index) {
-  if (taskName && (index >= 0)) {
+function changeTask(taskName,status) {
+  if (taskName) {
     let newList = readTaskList();
-    if (taskName === newList[index].getTaskName()) {
-      newList[index].changeTask();
+    let index = -1;
+    for (let i = 0; i < newList.length; i++) {
+      if ((taskName === newList[i].getTaskName()) && (status === newList[i].isActive()))
+      index = i;
     }
+    newList[index].changeTask();
 
     saveTaskList(newList);
     displayTaskList(readTaskList());
@@ -53,21 +56,73 @@ function changeTask(taskName,index) {
  * Takes a string and an integer as parameters
  * and removes a Task object from the task list
  **************************/
-function removeTask(taskName,index) {
-  if (taskName && (index >= 0)) {
+function removeTask(taskName,status) {
+  if (taskName) {
     let newList = readTaskList();
     //console.log("Before splicing: " + newList.length);
-    if (taskName === newList[index].getTaskName()) {
-      newList.splice(index,1);
-      //console.log("After splicing: " + newList.length);
+      let index = -1;
+      for (let i = 0; i < newList.length; i++) {
+        if ((taskName === newList[i].getTaskName()) && (status === newList[i].isActive()))
+        index = i;
+      }
 
-      saveTaskList(newList);
-      displayTaskList(readTaskList());
-    }
-    else {
+      if (index >= 0) {
+        newList.splice(index,1);
+        //console.log("After splicing: " + newList.length);
+  
+        saveTaskList(newList);
+        displayTaskList(readTaskList());
+      }
+    else if (index < 0) {
         const message = "Error: couldn't find task in taskList!";
         console.log(message);
       }
+  }
+}
+/******************************
+ * FILTER TASK LIST
+ * Takes a string as a parameter
+ * and calls different filtering options
+ *******************************/
+function filterTaskList(filter) {
+  const listData = readTaskList();
+
+  switch (filter) {
+    case `all`: {
+      let filterAll = function (list) {
+        displayTaskList(list);
+      }
+      filterAll(listData);
+    }
+    break;
+    case `active`: {
+      let filterActive = function (list) {
+        let newList = [];
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].isActive())
+            newList.push(list[i]);
+        }
+        
+        displayTaskList(newList);
+      }
+      filterActive(listData);
+    }
+    break;
+    case `completed`: {
+      let filterActive = function (list) {
+        let newList = [];
+        for (let i = 0; i < list.length; i++) {
+          if (!list[i].isActive())
+            newList.push(list[i]);
+        }
+        
+        displayTaskList(newList);
+      }
+      filterActive(listData);
+    }
+    break;
+    default: { console.log(`Error: couldn't filter task list!`) }
+    break;
   }
 }
 /***************************************
@@ -76,18 +131,22 @@ function removeTask(taskName,index) {
  ****************************************/
 function displayTaskList(list) {  
   let newHTML = "";
+
   if (list.length > 0) {
     for (let i = 0; i < list.length; i = i + 1) {
-      newHTML += `<tr name="task_row"><td name="task_active" onclick="changeTask('` + list[i].getTaskName() + `',` + i + `)">`;
+      newHTML += `<tr name="task_row"><td name="task_active" onclick="changeTask('` + list[i].getTaskName() + `',` + list[i].isActive() + `)">`;
+      
+      ///Checks for task's active status, marks an 'O' for active and 'X' for completed
       if (list[i].isActive())       { newHTML += `O`; }
       else if (!list[i].isActive()) { newHTML += `X`; } 
       
       newHTML +=  `</td><td name="task_name">`;
 
+      ///Checks for task's active status, marks up completed tasks with strikethrough text
       if (list[i].isActive()) { newHTML += list[i].getTaskName(); }
       else if (!list[i].isActive()) { newHTML += `<s>` + list[i].getTaskName() + `</s>` }
       
-      newHTML += `</td><td name="task_remove" onclick="removeTask('` + list[i].getTaskName() + `',` + i + `)">X</td></tr>`;
+      newHTML += `</td><td name="task_remove" onclick="removeTask('` + list[i].getTaskName() + `',` + list[i].isActive() + `)">X</td></tr>`;
       //console.log(newHTML);
     }
   }

@@ -14,9 +14,9 @@
         <table id="table_tasks"></table>
         <span id="row_filter">
           <span><strong>Filter:</strong></span>
-          <button type="button" id="filter_all" name="buttons_filter" value="all">All</button>
-          <button type="button" id="filter_active" name="buttons_filter" value="active">Active</button>
-          <button type="button" id="filter_completed" name="buttons_filter" value="completed">Completed</button>
+          <button type="button" id="filter_all" name="buttons_filter" value="all" onclick="filterTaskList('all')">All</button>
+          <button type="button" id="filter_active" name="buttons_filter" value="active" onclick="filterTaskList('active')">Active</button>
+          <button type="button" id="filter_completed" name="buttons_filter" value="completed" onclick="filterTaskList('completed')">Completed</button>
         </span><br>
         
         <span id="task_addition_envelope">
