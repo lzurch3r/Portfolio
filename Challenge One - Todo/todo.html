@@ -8,14 +8,14 @@
   <body onload="loadTaskList()">
     <div id="todo_envelope">
       <div id="todo_header_envelope">
-        <h1 id="todo_header">To-Do</h1>
+        <h1 id="todo_header">Todos</h1>
       </div>
       <div id="todo_list_envelope">
         <table id="table_tasks"></table>
         <span id="row_filter">
           <span><strong>Filter:</strong></span>
-          <button type="button" id="filter_all" name="buttons_filter" value="all" onclick="filterTaskList('all')">All</button>
-          <button type="button" id="filter_active" name="buttons_filter" value="active" onclick="filterTaskList('active')">Active</button>
+          <button type="button" id="filter_all" name="buttons_filter" value="all" onclick="filterTaskList('all')">All,</button>
+          <button type="button" id="filter_active" name="buttons_filter" value="active" onclick="filterTaskList('active')">Active,</button>
           <button type="button" id="filter_completed" name="buttons_filter" value="completed" onclick="filterTaskList('completed')">Completed</button>
         </span><br>
         
@@ -28,7 +28,7 @@
     </div>
     <br><br><br><br>
     <button type="buttton" onclick="clearAll()">Clear All</button>
-    <script src="todo.js"></script>
+    <script src="main.js"></script>
     <script>
       let taskInput = document.getElementById('input_task');
       taskInput.addEventListener("keyup", function(event) {
