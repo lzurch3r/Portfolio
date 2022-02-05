@@ -1,7 +1,8 @@
 class Task {
-  constructor(name,active) {
+  constructor(name,active,id) {
     this.taskName = name;
     this.active = active;
+    this.id = id;
   }
   isActive()     { return this.active;   }
   getTaskName()  { return this.taskName; }
@@ -10,6 +11,10 @@ class Task {
     else this.active = false;
   }
 };
+
+///Code to execute on startup
+loadTaskList();
+loadTaskFunctions();
 
 /**************************
  * ADD NEW TASK
@@ -21,17 +26,19 @@ function addNewTask(name) {
     
       let newList = readTaskList();
       //console.log(newList.length);
-      const newTask = new Task(name,true);
+      const newTask = new Task(name,true,Date.now());
       newList.unshift(newTask);
 
       saveTaskList(newList);
-      displayTaskList(readTaskList());
+      const newHTML = displayTaskList(readTaskList());
+      
     }
   else {
     const message = "Error: invalid task name!";
     console.log(message);
   }
 }
+//function 
 /************************************
  * CHANGE TASK
  * Takes a string and an integer as parameters
@@ -129,7 +136,7 @@ function filterTaskList(filter) {
  * DISPLAY TASK LIST
  * Takes an array as a parameter and 
  ****************************************/
-function displayTaskList(list) {  
+function displayTaskList(list) {
   let newHTML = "";
 
   if (list.length > 0) {
@@ -148,14 +155,19 @@ function displayTaskList(list) {
       
       newHTML += `</td><td name="task_remove" onclick="removeTask('` + list[i].getTaskName() + `',` + list[i].isActive() + `)">X</td></tr>`;
       //console.log(newHTML);
+
     }
   }
   else if (list.length === 0) {
     newHTML = "<em>There's nothing here!</em>";
   }
   
-  document.getElementById('table_tasks').innerHTML = newHTML;
-  clearTaskInput();
+  if (document.getElementById('table_tasks').innerHTML != newHTML) {
+    document.getElementById('table_tasks').innerHTML = newHTML;
+    clearTaskInput();
+  }
+
+  return newHTML;
 }
 /***********************************
  * CLEAR TASK INPUT
@@ -202,6 +214,28 @@ function loadTaskList() {
   else if (!readTaskList()) {
     clearAll();
   }
+}
+function loadTaskFunctions() {
+  const all = document.getElementById('filter_all');
+  const active = document.getElementById('filter_active');
+  const completed = document.getElementById('filter_completed');
+  const buttonAddTask = document.getElementById('add_task');
+  const taskInput = document.getElementById('input_task');
+  const buttonClearAll = document.getElementById('clear_all');
+
+  all.addEventListener("click", function () { filterTaskList('all'); });
+  active.addEventListener("click", function () { filterTaskList('active') });
+  completed.addEventListener("click", function () { filterTaskList('completed') });
+  buttonAddTask.addEventListener("click", function () {
+    addNewTask(document.getElementById('input_task').value);
+  });
+  taskInput.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      document.getElementById('add_task').click();
+    }
+  });
+  buttonClearAll.addEventListener("click", clearAll);
 }
 /********************************************
  * SAVE TASK LIST

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>ToDo List</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" type="module"></script>
   </head>
-  <body onload="loadTaskList()">
+  <body>
     <div id="todo_envelope">
       <div id="todo_header_envelope">
         <h1 id="todo_header">Todos</h1>
@@ -15,29 +16,18 @@
         <table id="table_tasks"></table>
         <span id="row_filter">
           <span><strong>Filter:</strong></span>
-          <button type="button" id="filter_all" name="buttons_filter" value="all" onclick="filterTaskList('all')">All,</button>
-          <button type="button" id="filter_active" name="buttons_filter" value="active" onclick="filterTaskList('active')">Active,</button>
-          <button type="button" id="filter_completed" name="buttons_filter" value="completed" onclick="filterTaskList('completed')">Completed</button>
+          <button type="button" id="filter_all" name="buttons_filter" value="all"">All,</button>
+          <button type="button" id="filter_active" name="buttons_filter" value="active">Active,</button>
+          <button type="button" id="filter_completed" name="buttons_filter" value="completed">Completed</button>
         </span><br>
         
         <span id="task_addition_envelope">
           <input type="text" id="input_task" placeholder="Write a new task here">
-          <button type="button" id="button_add_task" value="add"
-          onclick="addNewTask(document.getElementById('input_task').value)">+</button>
+          <button type="button" id="add_task" value="add">+</button>
         </span>
       </div>
     </div>
     <br><br><br><br>
-    <button type="buttton" onclick="clearAll()">Clear All</button>
-    <script src="main.js" type="module"></script>
-    <script>
-      let taskInput = document.getElementById('input_task');
-      taskInput.addEventListener("keyup", function(event) {
-        if (event.key === 'Enter') {
-          event.preventDefault();
-          document.getElementById('button_add_task').click();
-        }
-      });
-    </script>
+    <button type="button" id="clear_all">Clear All</button>
   </body>
 </html>
