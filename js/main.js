@@ -13,6 +13,11 @@ function createList() {
     {
       label: "Week 3 Notes",
       url: "week3/index.html"
+    },
+
+    {
+      label: "Week 5 Notes",
+      url: "week5/index.html"
     }
   ]
 
