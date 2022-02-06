@@ -1032,10 +1032,12 @@ ul
 <body lang=EN-US link="#0563C1" vlink="#954F72" style='tab-interval:.5in;
 word-wrap:break-word'>
 
+<a href="./index.html">Return to Week 5 Notes</a>
+
 <div class=WordSection1>
 
 <p class=MsoNormal align=center style='text-align:center'><span
-style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:200%'>Ch. 10 –
+style='font-size:14.0pt;mso-bidi-font-size:12.0pt;line-height:200%'>Ch. 10 ï¿½
 Testing and Debugging<o:p></o:p></span></p>
 
 <p class=MsoNormal>Errors and bugs will always be present when programming. A
@@ -1048,37 +1050,37 @@ and deal with them quickly.</p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>System Error – problem with the system or
+Symbol'><span style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>System Error ï¿½ problem with the system or
 external devices the program is interacting with.</p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>Programmer error – incorrect syntax or faulty
+Symbol'><span style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Programmer error ï¿½ incorrect syntax or faulty
 logic; maybe even a typo.</p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]>User error – user enters data incorrectly, which
-the program can’t handle.</p>
+Symbol'><span style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>User error ï¿½ user enters data incorrectly, which
+the program canï¿½t handle.</p>
 
-<p class=MsoNormal>Programmers can’t do much about the system itself, so they
+<p class=MsoNormal>Programmers canï¿½t do much about the system itself, so they
 try to understand it well and work around any problems external systems may
-cause. Programmer errors are a programmer’s responsibility to work out and minimize.
-User errors, while not directly a programmer’s fault, still are the
-programmer’s responsibility to avoid.</p>
+cause. Programmer errors are a programmerï¿½s responsibility to work out and minimize.
+User errors, while not directly a programmerï¿½s fault, still are the
+programmerï¿½s responsibility to avoid.</p>
 
 <p class=MsoNormal>An <b>exception</b> is an error that produces a return value
 that can then be used by the program to deal with the error. An exception will
-also produce a <b>stack trace</b> – a sequence of functions or method calls
+also produce a <b>stack trace</b> ï¿½ a sequence of functions or method calls
 that lead to the point where the error occurred. A stack trace will work
 backward from the point at which the error occurred to identify the function or
 method that started the sequence.</p>
 
-<p class=MsoNormal>A <b>warning</b> can occur if there’s an error in the code
-that isn’t enough to cause the program to crash. May lead to problems if the
+<p class=MsoNormal>A <b>warning</b> can occur if thereï¿½s an error in the code
+that isnï¿½t enough to cause the program to crash. May lead to problems if the
 program still runs, as it may do so incorrectly. Sometimes, a warning icon will
 display in the browser to indicate an error; other times, you may need to open
 the console to view an error.</p>
@@ -1089,13 +1091,13 @@ still appear, but the JS code will stop working in the background.</p>
 <p class=MsoNormal><b>The Importance of Testing and Debugging</b></p>
 
 <p class=MsoNormal>Ensure that when code fails, it fails loudly. Do not let a
-bug go unnoticed. But <span class=GramE>also</span> don’t inhibit user experience.
+bug go unnoticed. But <span class=GramE>also</span> donï¿½t inhibit user experience.
 Code must be tested rigorously to give the best possible experience.</p>
 
 <p class=MsoNormal><b>Strict Mode<o:p></o:p></b></p>
 
-<p class=MsoNormal>Strict mode considers deprecated coding practices as “poor
-style” rather than actual errors. <span class=GramE>Writing</span> code with
+<p class=MsoNormal>Strict mode considers deprecated coding practices as ï¿½poor
+styleï¿½ rather than actual errors. <span class=GramE>Writing</span> code with
 strict mode turned on increases the chance of errors, since it will throw
 exceptions if it detects sloppy code practices. To use strict mode, add the
 following string to the first line of a JavaScript file:</p>
@@ -1120,27 +1122,27 @@ online. </p>
 
 <p class=MsoNormal><b>Feature Detection</b></p>
 
-<p class=MsoNormal>Some browsers won’t support certain features while others
-will. You also can’t rely on the user to have the most up-to-date browser.</p>
+<p class=MsoNormal>Some browsers wonï¿½t support certain features while others
+will. You also canï¿½t rely on the user to have the most up-to-date browser.</p>
 
 <p class=MsoNormal>The recommended way to determine browser support is to use
 feature detection. It uses an <b>if</b> statement to check whether an object or
 method exists before actually trying to call the method.</p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
-line-height:200%'><span style='mso-tab-count:1'>             </span><i>if (<span
+line-height:200%'><span style='mso-tab-count:1'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </span><i>if (<span
 class=SpellE><span class=GramE>window.holoDeck</span></span>) {<o:p></o:p></i></span></p>
 
 <p class=MsoNormal><i><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
-line-height:200%'><span style='mso-tab-count:1'>             </span><span
-style='mso-spacerun:yes'>  </span><span class=SpellE>virtualReality.activate</span>(<span
+line-height:200%'><span style='mso-tab-count:1'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </span><span
+style='mso-spacerun:yes'>ï¿½ </span><span class=SpellE>virtualReality.activate</span>(<span
 class=GramE>);</span><o:p></o:p></span></i></p>
 
 <p class=MsoNormal><i><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;
-line-height:200%'><span style='mso-tab-count:1'>             </span>}<o:p></o:p></span></i></p>
+line-height:200%'><span style='mso-tab-count:1'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </span>}<o:p></o:p></span></i></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-style:italic'>This ensures that a
-method is only called if it exists and fails gracefully if it doesn’t. These
+method is only called if it exists and fails gracefully if it doesnï¿½t. These
 two links are useful resources for checking which features are currently
 supported in different browsers.<o:p></o:p></span></p>
 
@@ -1196,17 +1198,17 @@ when people try to use it!<o:p></o:p></span></p>
 style='mso-bidi-font-style:italic'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-style:italic'><span
-style='mso-tab-count:1'>           </span></span><i style='mso-bidi-font-style:
+style='mso-tab-count:1'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </span></span><i style='mso-bidi-font-style:
 normal'><span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;line-height:
 200%'>const error = new <span class=GramE>Error(</span>);</span></i><span
 style='font-size:11.0pt;mso-bidi-font-size:10.0pt;line-height:200%;mso-bidi-font-style:
 italic'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-style:italic'>The constructor
-takes a parameter that’s used as the error message:<o:p></o:p></span></p>
+takes a parameter thatï¿½s used as the error message:<o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-style:italic'><span
-style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> </span></span><i
+style='mso-spacerun:yes'>ï¿½</span><span style='mso-spacerun:yes'>ï¿½</span></span><i
 style='mso-bidi-font-style:normal'><span style='font-size:11.0pt;mso-bidi-font-size:
 10.0pt;line-height:200%'>const error = new <span class=GramE>Error(</span>'Oops,
 something went wrong');</span></i><span style='mso-bidi-font-style:italic'><o:p></o:p></span></p>
@@ -1216,15 +1218,15 @@ are used for specific errors:<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>·<span
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>ï¿½<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
 class=SpellE><b><span style='mso-bidi-font-style:italic'>EvalError</span></b></span><span
-style='mso-bidi-font-style:italic'> isn’t used currently<o:p></o:p></span></p>
+style='mso-bidi-font-style:italic'> isnï¿½t used currently<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-bidi-font-weight:bold;mso-bidi-font-style:italic'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span class=SpellE><b><span style='mso-bidi-font-style:
 italic'>RangeError</span></b></span><span style='mso-bidi-font-style:italic'> is
 thrown when a number is outside an allowable range of values<b><o:p></o:p></b></span></p>
@@ -1232,68 +1234,68 @@ thrown when a number is outside an allowable range of values<b><o:p></o:p></b></
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-bidi-font-weight:bold;mso-bidi-font-style:italic'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span class=SpellE><b><span style='mso-bidi-font-style:
 italic'>ReferenceError</span></b></span><span style='mso-bidi-font-style:italic'>
-– when a reference is made to an item that doesn’t exist, like an undefined
+ï¿½ when a reference is made to an item that doesnï¿½t exist, like an undefined
 function<b><o:p></o:p></b></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-bidi-font-weight:bold;mso-bidi-font-style:italic'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span class=SpellE><b><span style='mso-bidi-font-style:
-italic'>SyntaxError</span></b></span><span style='mso-bidi-font-style:italic'> –
-when there’s a syntax error...<b><o:p></o:p></b></span></p>
+italic'>SyntaxError</span></b></span><span style='mso-bidi-font-style:italic'> ï¿½
+when thereï¿½s a syntax error...<b><o:p></o:p></b></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-bidi-font-weight:bold;mso-bidi-font-style:italic'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span class=SpellE><b><span style='mso-bidi-font-style:
-italic'>TypeError</span></b></span><span style='mso-bidi-font-style:italic'> – an
+italic'>TypeError</span></b></span><span style='mso-bidi-font-style:italic'> ï¿½ an
 error in the type of value used (expected a string but got a number)<b><o:p></o:p></b></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-bidi-font-weight:bold;mso-bidi-font-style:italic'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span class=SpellE><b><span style='mso-bidi-font-style:
-italic'>URIError</span></b></span><span style='mso-bidi-font-style:italic'> –
+italic'>URIError</span></b></span><span style='mso-bidi-font-style:italic'> ï¿½
 problem encoding or decoding the URI<b><o:p></o:p></b></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-bidi-font-weight:bold;mso-bidi-font-style:italic'><span
-style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='mso-list:Ignore'>ï¿½<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span class=SpellE><b><span style='mso-bidi-font-style:
 italic'>InternalError</span></b></span><span style='mso-bidi-font-style:italic'>
-– a non-standard error thrown when an error occurs in the JavaScript engine.<b><o:p></o:p></b></span></p>
+ï¿½ a non-standard error thrown when an error occurs in the JavaScript engine.<b><o:p></o:p></b></span></p>
 
 <p class=MsoNormal><span style='mso-bidi-font-style:italic'>Properties across
 browsers are used inconsistently. The only safe ones to use are:<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>·<span
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>ï¿½<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b><span
 style='mso-bidi-font-style:italic'>name</span></b><span style='mso-bidi-font-style:
-italic'> – returns the name of the error constructor function used as a string
+italic'> ï¿½ returns the name of the error constructor function used as a string
 ('<span class=SpellE>ReferenceError</span>')<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>·<span
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>ï¿½<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b><span
-style='mso-bidi-font-style:italic'>message </span></b>– returns a description
+style='mso-bidi-font-style:italic'>message </span></b>ï¿½ returns a description
 of the error and should be provided to the <b>Error</b> constructor function<span
 style='mso-bidi-font-style:italic'><o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpLast style='text-indent:-.25in;mso-list:l2 level1 lfo2'><![if !supportLists]><span
 style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>·<span
+Symbol;mso-bidi-font-style:italic'><span style='mso-list:Ignore'>ï¿½<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b><span
-style='mso-bidi-font-style:italic'>stack – </span></b><span style='mso-bidi-font-style:
+style='mso-bidi-font-style:italic'>stack ï¿½ </span></b><span style='mso-bidi-font-style:
 italic'>returns a stack trace for that error. A non-standard property and
 recommended not safe to use in production sites.<o:p></o:p></span></p>
 
@@ -1316,47 +1318,47 @@ block. The error object is passed as a parameter to the <b>catch</b> block.</p>
 after a <b>catch</b> block, and will always be executed after the <b>try</b> or
 <b>catch</b> block. Use it if you want code to run in any case.</p>
 
-<p class=MsoNormal><span style='mso-tab-count:1'>           </span><i><span
+<p class=MsoNormal><span style='mso-tab-count:1'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </span><i><span
 style='font-size:11.0pt;mso-bidi-font-size:10.0pt;line-height:200%'>function <span
 class=SpellE>imaginarySquareRoot</span>(number) {<o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
-mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>   
+mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>ï¿½ï¿½ï¿½
 </span>'<span class=GramE>use</span> strict';<o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
-mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>   
+mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>ï¿½ï¿½ï¿½
 </span>let <span class=GramE>answer;</span><o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
-mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>   
+mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>ï¿½ï¿½ï¿½
 </span>try {<o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
 mso-bidi-font-size:10.0pt;line-height:200%'><span
-style='mso-spacerun:yes'>        </span>answer = String(<span class=SpellE>squareRoot</span>(number)<span
+style='mso-spacerun:yes'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </span>answer = String(<span class=SpellE>squareRoot</span>(number)<span
 class=GramE>);</span><o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
-mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>   
+mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>ï¿½ï¿½ï¿½
 </span>} catch(error) {<o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
 mso-bidi-font-size:10.0pt;line-height:200%'><span
-style='mso-spacerun:yes'>        </span>answer = <span class=SpellE>squareRoot</span>(-<span
+style='mso-spacerun:yes'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </span>answer = <span class=SpellE>squareRoot</span>(-<span
 class=GramE>number)+</span>&quot;<span class=SpellE>i</span>&quot;;<o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
-mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>   
+mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>ï¿½ï¿½ï¿½
 </span>} finally {<o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
 mso-bidi-font-size:10.0pt;line-height:200%'><span
-style='mso-spacerun:yes'>        </span>return `+ or - ${answer}<span
+style='mso-spacerun:yes'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ </span>return `+ or - ${answer}<span
 class=GramE>`;</span><o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
-mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>   
+mso-bidi-font-size:10.0pt;line-height:200%'><span style='mso-spacerun:yes'>ï¿½ï¿½ï¿½
 </span>}<o:p></o:p></span></i></p>
 
 <p class=MsoNormal style='margin-left:.5in'><i><span style='font-size:11.0pt;
@@ -1371,7 +1373,7 @@ be functions that tests that a piece of code runs as it should.</p>
 writing tests before any actual code. While the tests will initially fail, your
 next step is to write code to make the tests pass. Then the code is refactored
 to make it faster and more <span class=GramE>readable, and</span> remove any
-repetition. <span style='mso-spacerun:yes'> </span>This is how workflow should
+repetition. <span style='mso-spacerun:yes'>ï¿½</span>This is how workflow should
 be:</p>
 
 <p class=MsoListParagraphCxSpFirst style='text-indent:-.25in;mso-list:l1 level1 lfo3'><![if !supportLists]><span
@@ -1399,7 +1401,7 @@ style='mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New
 style='mso-list:Ignore'>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]>Write more tests for new features</p>
 
-<p class=MsoNormal>This is often referred to as the “red-green-refactor” cycle
+<p class=MsoNormal>This is often referred to as the ï¿½red-green-refactorï¿½ cycle
 of TDD. TDD <span class=GramE>is considered to be</span> best practice. Still,
 any tests are better than no tests at all.</p>
 
@@ -1409,7 +1411,9 @@ any tests are better than no tests at all.</p>
 easy to create and run tests by providing helper methods for common test
 assertions.</p>
 
-</div>
+</div><br>
+
+<a href="./index.html">Return to Week 5 Notes</a>
 
 </body>
 
