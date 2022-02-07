@@ -14,29 +14,47 @@ function renderList(list, element, toDos, hidden) {
     const formattedDate = new Date(toDo.id).toLocaleDateString("en-US");
 
     let cb = null;     //creating a callback function to add event listener to item
+    let rb = null;
     if (hidden && toDo.completed) {    //standard HTML writing
-        item.innerHTML = `<label><input type="checkbox" checked><s> ${toDo.content}</s></label>` +
-                         `<button>X</button>`;
+        item.innerHTML = `<label><input type="checkbox" checked><s> ${toDo.content}</s></label><button type="button">X</button>`;
     }
     else {
-      item.innerHTML = `<label><input type="checkbox"> ${toDo.content}</label>` +
-                       `<button>X<button>`;
+      item.innerHTML = `<label><input type="checkbox"> ${toDo.content}</label><button type="button">X</button>`;
     }
 
     //supposedly to wire listener to the checkbox
     cb = item.childNodes[0].childNodes[0];
 
     if (cb) {
-      cb.addEventListener("change", function() {
+      cb.addEventListener("change", function () {
         toDos.completeToDo(toDo.id);
       });
     }
 
-    element.appendChild(item);
+    //wire listener to the remove button
+    rb = item.childNodes[1];
+
+    if (rb) {
+      rb.addEventListener("touchend", function () {
+        toDos.removeToDo(toDo.id);
+      });
+      rb.addEventListener("click", function () {
+        toDos.removeToDo(toDo.id);
+      })
+    }
+
+      element.appendChild(item);
   });
+  
+  if (element.innerHTML === "") {
+    const item = document.createElement('li');
+    item.innerHTML = `<em>There's nothing here!</em>`;
+    element.appendChild(item);
+  }
 }
 
 function addToDo(value, key) {
+  if (value !== "") {
   const newToDo = {  //creates a new ToDo task
     id: new Date(),
     content: value,
@@ -53,6 +71,7 @@ function addToDo(value, key) {
   }
   catch (e) {
     console.log(e);
+  }
   }
 }
 
@@ -101,6 +120,17 @@ export default class ToDos {
 
     if (toDo) {
       toDo.completed = !toDo.completed;  //an extremely simple way of switching bool variables. I'm shocked
+      writeToLS(this.key, liveToDos);
+      renderList(liveToDos, this.listElement, this, true);
+    }
+  }
+
+  removeToDo(id) {
+    console.log(id + "removed");
+    let toDo = this.findToDo(id);
+
+    if (toDo) {
+      liveToDos.splice(liveToDos.indexOf(toDo),1);
       writeToLS(this.key, liveToDos);
       renderList(liveToDos, this.listElement, this, true);
     }
