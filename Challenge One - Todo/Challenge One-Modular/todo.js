@@ -27,7 +27,6 @@ function renderList(list, element, toDos, hidden) {
     cb = item.childNodes[0].childNodes[0];
 
     if (cb) {
-      console.log(cb); //I want to know what cb shows me
       cb.addEventListener("change", function() {
         toDos.completeToDo(toDo.id);
       });
@@ -64,6 +63,12 @@ function getToDos(key) {
   }
 
   return liveToDos;
+}
+
+function filterToDos(key, hidden = true) {
+  let toDos = getToDos(key);
+
+  return toDos.filter(item => item.completed === hidden);
 }
 
 export default class ToDos {
@@ -110,5 +115,9 @@ export default class ToDos {
 
     writeToLS(key, liveToDos);
     this.listToDos();
+  }
+
+  filterToDos(key, hidden = true) {
+    renderList(filterToDos(key, hidden), this.listElement, this, true);
   }
 }
