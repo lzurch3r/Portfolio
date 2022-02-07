@@ -7,19 +7,24 @@ let liveToDos = null;
 function renderList(list, element, toDos, hidden) {
   console.log(list);
   element.innerHTML = "";
+  let numIncomplete = 0;
 
   list.forEach(toDo => {
     const item = document.createElement('li');
+    const att = document.createAttribute("class");
     ///NOTE TO SELF: I'm confused why this is here, but I'll learn about it
     const formattedDate = new Date(toDo.id).toLocaleDateString("en-US");
 
+    att.value = "demoClass";
+    item.setAttributeNode(att);
     let cb = null;     //creating a callback function to add event listener to item
     let rb = null;
     if (hidden && toDo.completed) {    //standard HTML writing
-        item.innerHTML = `<label><input type="checkbox" checked><s> ${toDo.content}</s></label><button type="button">X</button>`;
+        item.innerHTML = `<label><input type="checkbox" class="checkbox" checked><s> ${toDo.content}</s></label><button type="button" class="removeButton">X</button>`;
     }
     else {
-      item.innerHTML = `<label><input type="checkbox"> ${toDo.content}</label><button type="button">X</button>`;
+      item.innerHTML = `<label><input type="checkbox" class="checkbox"> ${toDo.content}</label><button type="button" class="removeButton">X</button>`;
+    numIncomplete += 1;
     }
 
     //supposedly to wire listener to the checkbox
@@ -51,6 +56,8 @@ function renderList(list, element, toDos, hidden) {
     item.innerHTML = `<em>There's nothing here!</em>`;
     element.appendChild(item);
   }
+
+  document.getElementById('filter_title').innerHTML = `${numIncomplete} task(s) left`;
 }
 
 function addToDo(value, key) {
