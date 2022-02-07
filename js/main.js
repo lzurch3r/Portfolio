@@ -18,6 +18,11 @@ function createList() {
     {
       label: "Week 5 Notes",
       url: "week5/index.html"
+    },
+
+    {
+      label: "Challenge One - ToDo",
+      url: "challengeOne-ToDo/challengeOne-Modular/todo.html" 
     }
   ]
 
