@@ -5,7 +5,7 @@ let liveToDos = null;
 //  better understand it while implementing own code from OLDmain.js
 
 function renderList(list, element, toDos, hidden) {
-  console.log(list);
+  //console.log(list);
   element.innerHTML = "";
   let numIncomplete = 0;
 
