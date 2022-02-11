@@ -15,7 +15,7 @@ export function writeToLS(key, data) {
 //as instructor example states, uses a touchend for mobile devices and falls back to a click for desktop
 ///THIS IS IMPORTANT: Remember mobile-first development
 export function bindTouch(selector, callback) {
-    const element = qs(selector);               //defines element with a real HTML element tken from qs()
+    const element = qs(selector);               //defines element with a real HTML element taken from qs()
     element.addEventListener("touchend", e => {
       e.preventDefault();
       callback();
