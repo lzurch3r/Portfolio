@@ -24,7 +24,7 @@ function renderList(list, element, toDos, hidden) {
     }
     else {
       item.innerHTML = `<label><input type="checkbox" class="checkbox"> ${toDo.content}</label><button type="button" class="removeButton">X</button>`;
-    numIncomplete += 1;
+      numIncomplete += 1;
     }
 
     //supposedly to wire listener to the checkbox
