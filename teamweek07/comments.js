@@ -5,6 +5,7 @@ let liveComments = null;
 function renderList(list, element, comments, hidden) {
   element.innerHTML = "";
 
+  if (list) {
   list.forEach(Comment => {
     const item = document.createElement('li');
     const att = document.createAttribute('class');
@@ -18,26 +19,32 @@ function renderList(list, element, comments, hidden) {
 
     element.appendChild(item);
   });
+  }
 }
 function addComment(comment, hikeName) {
-  if (value !== "") {
+  if (comment !== "") {
     const newComment = {
       name: hikeName,
       date: new Date(),
       content: comment
     };
+
+    try {
+      liveComments.push(newComment);
+  
+      if (!liveComments)
+        throw (`ERROR: Cannot find array 'liveComments'`)
+    }
+    catch (e) {
+      console.log(e);
+    }
   }
 }
 
 function getAllComments(type) {
-  if (liveComments === null) {
-    const newComment = {
-      name: "Denada Falls",
-      date: new Date(),
-      content: "A test for Denada Falls!"
-    }
-    liveComments = [newComment];
-  }
+  if (liveComments === null)
+    //liveComments = readFromLS(type);
+    liveComments = [];
 
   return liveComments;
 }
@@ -47,6 +54,7 @@ export default class Comments {
     this.listElement = listElement;
     this.type = type;
     
+    bindTouch(("#add_comment"), this.newComment.bind(this));
     this.showCommentsList();
   }
 
@@ -55,6 +63,14 @@ export default class Comments {
     addComment(comment.value, this.type);
     comment.value = "";
     this.showCommentsList();
+  }
+
+  findComment(date) {
+    let comment = liveComments.find( element => {
+      return element.date === date;
+    })
+
+    return comment;
   }
 
   showCommentsList(hidden = true) {
