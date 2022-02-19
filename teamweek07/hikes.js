@@ -1,3 +1,5 @@
+import * as model from './model.js'
+
 // Example of using Classes and modules to organize the code needed to render our list of hikes. Not using MVC here.
 
 //create an array of hikes
@@ -114,6 +116,12 @@ function renderOneHikeLight(hike) {
             <h3>Difficulty</h3>
             <p>${hike.difficulty}</p>
         </div>
+        <div>
+        <h3>User Comments:</h3>
+        <p class="comments-list">
+          ${model.getAllComments(hike.name)}
+        </p>
+      </div>
 </div>`;
 
   return item;
