@@ -1,4 +1,4 @@
-import Comment from './Comment.js';
+import Comments from './comments.js';
 import * as utilities from './utils.js';
 
 
