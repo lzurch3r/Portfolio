@@ -1,0 +1,32 @@
+@media only screen and (max-width: 600px) {
+  header {
+    font-family: 'Akaya Telivigala';
+  }
+  main, button {
+    font-family: 'Oswald';
+  }
+  body {
+    text-align: center;
+    background-color: rgba(176, 176, 176, 0.347);
+  }
+  button {
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  header {
+    font-family: 'Akaya Telivigala';
+  }
+  main, button {
+    font-family: 'Oswald';
+  }
+  body {
+    text-align: center;
+    background-color: rgba(176, 176, 176, 0.347);
+  }
+  button {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
