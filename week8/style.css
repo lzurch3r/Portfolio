@@ -1,10 +1,43 @@
+@keyframes moveDown { 
+    from {
+    transform: translateY(-50%);
+    }
+    to {
+    transform: translateY(50%);
+    }
+}
+
+@keyframes appearDisappear { 
+    0%, 100% {
+    opacity: 0;
+    }
+    20%, 80% {
+    opacity: 1;
+    }
+}
+
+@keyframes bgMove {
+    100% {
+    background-position: 120% 0;
+    }
+}
 
 h1 span {
   font-size: 30px;
   color: #999999;
   display: inline-block;
+  border-radius: 0;
+  /*transition-property: transform, color;
+  transition-duration: 200ms, 100ms;
+  transition-timing-function: ease-out, linear;
+  transition-delay: 50ms;*/
+  transition: transform 200ms ease-out 50ms, color 100ms linear 50ms;
+
 }
 h1:hover span {
   color: #484848;
   transform: rotate(10deg) translateY(40px) scale(1.5);
+  animation:
+  appearDisappear 300ms ease-in backwards,
+  moveDown 600ms ease-out 0ms forwards;
 }
