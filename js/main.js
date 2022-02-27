@@ -26,6 +26,11 @@ function createList() {
     },
 
     {
+      label: "Week 8",
+      url: "week8/week8Examples.html"
+    },
+
+    {
       label: "Challenge One - ToDo",
       url: "challengeOne-ToDo/challengeOne-Modular/todo.html" 
     }
