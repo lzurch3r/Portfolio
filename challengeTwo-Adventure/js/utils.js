@@ -22,3 +22,17 @@ export function bindTouch(selector, callback) {
     });
     element.addEventListener("click", callback);
 }
+
+export function parseJSON(filePath) {
+  return fetch(filePath)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+      }
+      return response.json();
+    })
+    .then(json => {
+      console.log(json);
+      return json;
+    });
+}
