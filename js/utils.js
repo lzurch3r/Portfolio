@@ -22,3 +22,8 @@ export function bindTouch(selector, callback) {
     });
     element.addEventListener("click", callback);
 }
+
+export function parseJSON(filePath) {
+  const data = JSON.parse(filePath);
+  return data;
+}
