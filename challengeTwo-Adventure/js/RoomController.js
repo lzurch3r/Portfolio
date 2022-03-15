@@ -1,4 +1,4 @@
-import { displayTitleScreenText } from "./TextController.js";
+import { buildText } from "./TextController.js";
 
 function renderRoomText(array,id,element) {
   element.innerHTML = id + " text rendered " + array[0] + " " + array[1] + " " + array[2];
