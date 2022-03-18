@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=0">
     <title>Week 11 JSON Server</title>
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="week11.js" type="module"></script>
   </head>
 
   <body>
     <div id="dummy"></div>
+
+    <form class="login-form" method="POST">
+      <div class="form-control">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username">
+      </div>
+      <div class="form-control">
+          <label for="password">Password</label>
+          <input type="text" name="password" id="password">
+          <button class="btn" type="submit" id="submit-button">Login</button>
+      </div>
+    </form>
   </body>
 
 </html>
