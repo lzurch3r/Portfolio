@@ -12,7 +12,7 @@ export default class Rooms {
   constructor(id,element) {
     this.id = id;
     this.element = element;
-    this.textArray = [getRoomText(this.id,'essential_text'), getRoomText(this.id,'flavor_text'), getRoomText(this.id,'npc_dialogue')];
+    this.textArray = [getRoomText(this.id,'essential_text'), getRoomText(this.id,'flavor_text'), getRoomText(this.id,'npc_text')];
 
     this.displayRoomText(this.id,this.element);
   }

@@ -38,13 +38,3 @@ export async function parseJSON(filePath) {
 
   return data;
 }
-
-export function createArray(arrayData){
-  let array = [];
-
-  arrayData.forEach(element => {
-    array.push(element);
-  })
-
-  return array;
-}

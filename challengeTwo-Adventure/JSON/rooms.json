@@ -1,0 +1,16 @@
+{
+  "rooms": [
+    {
+      "id": "room_00",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text": "none"
+    },
+    {
+      "id": "room_01",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text": "none"
+    }
+  ]
+}
