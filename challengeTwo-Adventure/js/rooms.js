@@ -1,5 +1,5 @@
 /// JS file for reading data from JSON objects and exporting arrays of room objects
-import { createArray, parseJSON } from "./utils.js";
+import { createArray, parseJSON, bindTouch } from "./utils.js";
 import { RoomEssentialText, RoomFlavorText, NPCText } from "./objects.js";
 
 const url = './JSON/rooms.json';
@@ -39,6 +39,11 @@ function renderRoomText(id, element, content) {
     const item2 = document.createElement('p');
     const item3 = document.createElement('p');
 
+    // Set attributes of newly created HTML elements
+    item1.setAttribute('id', 'essential_text');
+    item2.setAttribute('id', 'flavor_text');
+    item3.setAttribute('id', 'npc_text');
+
     // Insert text from above variables
     item1.innerHTML = `${essText}`;
     item2.innerHTML = `${flavText}`;
@@ -49,19 +54,55 @@ function renderRoomText(id, element, content) {
     element.appendChild(item2);
     element.appendChild(item3);
 
-    if (obj.id != "room_00") {
-      const backButton = document.createElement('button');
-      
-    }
-    
+    // Create a directional map for the player to go
+    // 'adj_room_id' follows four cardinal directions in this order:
+    //   [ UP, DOWN, LEFT, RIGHT] 
+
+    const element2 = document.getElementById('movement_options');
+    element2.innerHTML = "";
+
+    const buttonUp    = createDirButton("button_up",    "UP",    obj.adj_room_id[0], element, content);
+    const buttonDown  = createDirButton("button_down",  "DOWN",  obj.adj_room_id[1], element, content);
+    const buttonLeft  = createDirButton("button_left",  "LEFT",  obj.adj_room_id[2], element, content);
+    const buttonRight = createDirButton("button_right", "RIGHT", obj.adj_room_id[3], element, content);
+
+    if (buttonUp)    element2.appendChild(buttonUp);
+    if (buttonDown)  element2.appendChild(buttonDown);
+    if (buttonLeft)  element2.appendChild(buttonLeft);
+    if (buttonRight) element2.appendChild(buttonRight);
   }
 }
 
+// Creates and returns a directional button
+function createDirButton(name, direction, id, element, content) {
+  
+  if (id != "-1") {  // Checks for an unusable direction; otherwise, return null
+    const newButton = document.createElement('button');  //First, we create a button
+    newButton.setAttribute('type', 'button');  // Set attributes 'type'
+    newButton.setAttribute('id', name);        //   and 'id'
+    newButton.innerHTML = direction;  // Set button value
+  
+      //Adds touch and click capabilities to newButton
+      newButton.addEventListener("touchend", e => {
+        e.preventDefault();
+        renderRoomText(id, element, content);
+      });
+      newButton.addEventListener("click", e => {
+        e.preventDefault();
+        renderRoomText(id, element, content);
+      });
+      
+      return newButton;  // Return the whole thing
+  }
+  return null;
+}
 
 export default class Rooms {
-  constructor() {
+  constructor(id, element) {
     this.content = createArray(data.rooms);
     console.log(this.content);
+
+    this.displayText(id, element);
   }
 
   displayText(roomID, element) {

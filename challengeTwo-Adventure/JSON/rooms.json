@@ -10,7 +10,7 @@
         "index": "0",
         "subIndex": "0"
       },
-      "next_room_id": [
+      "adj_room_id": [
         "room_01",
         "-1",
         "-1",
@@ -27,9 +27,9 @@
         "index": "-1",
         "subIndex": "-1"
       },
-      "next_room_id": [
-        "room_00",
+      "adj_room_id": [
         "-1",
+        "room_00",
         "-1",
         "-1"
       ]
