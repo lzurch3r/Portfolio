@@ -6,9 +6,9 @@
       "flavor_text": "0",
       "npc_text":
       {
-        "id": "Jikenwa",
-        "index": "0",
-        "subIndex": "0"
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
       },
       "adj_room_id": [
         "room_01",
@@ -20,6 +20,23 @@
     {
       "id": "room_01",
       "essential_text": "0",
+      "flavor_text": "1",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_29",
+        "room_00",
+        "room_26",
+        "room_02"
+      ]
+    },
+    {
+      "id": "room_02",
+      "essential_text": "0",
       "flavor_text": "0",
       "npc_text":
       {
@@ -29,7 +46,466 @@
       },
       "adj_room_id": [
         "-1",
-        "room_00",
+        "-1",
+        "room_01",
+        "room_03"
+      ]
+    },
+    {
+      "id": "room_03",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_08",
+        "room_04",
+        "room_02",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_04",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_03",
+        "room_05",
+        "-1",
+        "room_07"
+      ]
+    },
+    {
+      "id": "room_05",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_04",
+        "-1",
+        "room_06",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_06",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "-1",
+        "-1",
+        "room_05"
+      ]
+    },
+    {
+      "id": "room_07",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "Jikenwa",
+        "index": "0",
+        "subIndex": "0"
+      },
+      "adj_room_id": [
+        "-1",
+        "-1",
+        "room_04",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_08",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_09",
+        "room_03",
+        "-1",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_09",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_10",
+        "room_08",
+        "-1",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_10",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "??",
+        "index": "1",
+        "subIndex": "0"
+      },
+      "adj_room_id": [
+        "-1",
+        "room_09",
+        "room_11",
+        "room_25"
+      ]
+    },
+    {
+      "id": "room_11",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "-1",
+        "room_12",
+        "room_10"
+      ]
+    },
+    {
+      "id": "room_12",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_13",
+        "-1",
+        "-1",
+        "room_11"
+      ]
+    },
+    {
+      "id": "room_13",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "??",
+        "index": "1",
+        "subIndex": "1"
+      },
+      "adj_room_id": [
+        "room_14",
+        "-1",
+        "room_12",
+        "room_23"
+      ]
+    },
+    {
+      "id": "room_14",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_15",
+        "room_13",
+        "-1",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_15",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_21",
+        "room_14",
+        "room_16",
+        "room_19"
+      ]
+    },
+    {
+      "id": "room_16",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "-1",
+        "room_17",
+        "room_15"
+      ]
+    },
+    {
+      "id": "room_17",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "room_18",
+        "-1",
+        "room_16"
+      ]
+    },
+    {
+      "id": "room_18",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_17",
+        "-1",
+        "-1",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_19",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "-1",
+        "room_15",
+        "room_20"
+      ]
+    },
+    {
+      "id": "room_20",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "-1",
+        "room_19",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_21",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "room_15",
+        "room_22",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_22",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "This guy",
+        "index": "2",
+        "subIndex": "0"
+      },
+      "adj_room_id": [
+        "-1",
+        "-1",
+        "-1",
+        "room_21"
+      ]
+    },
+    {
+      "id": "room_23",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "room_24",
+        "room_13",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_24",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_23",
+        "-1",
+        "room_25",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_25",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "-1",
+        "room_10",
+        "room_24"
+      ]
+    },
+    {
+      "id": "room_26",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "room_28",
+        "room_27",
+        "-1",
+        "room_01"
+      ]
+    },
+    {
+      "id": "room_27",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "(*Hands shaking*)",
+        "index": "3",
+        "subIndex": "0"
+      },
+      "adj_room_id": [
+        "room_26",
+        "-1",
+        "-1",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_28",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "Dilapidated man",
+        "index": "4",
+        "subIndex": "0"
+      },
+      "adj_room_id": [
+        "-1",
+        "room_26",
+        "-1",
+        "-1"
+      ]
+    },
+    {
+      "id": "room_29",
+      "essential_text": "0",
+      "flavor_text": "0",
+      "npc_text":
+      {
+        "id": "-1",
+        "index": "-1",
+        "subIndex": "-1"
+      },
+      "adj_room_id": [
+        "-1",
+        "room_01",
         "-1",
         "-1"
       ]

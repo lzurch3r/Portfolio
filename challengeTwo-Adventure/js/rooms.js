@@ -27,6 +27,7 @@ function getNPCText(name, index, subIndex) {
 
 function renderRoomText(id, element, content) {
   const obj = content.find((room) => room.id == id);
+  console.log(id);
   element.innerHTML = "";
   if (obj) {
     // Get text data from obj and fill into variables

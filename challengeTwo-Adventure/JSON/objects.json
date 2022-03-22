@@ -19,7 +19,7 @@
     "id": "flavor_text",
     "content": [
       "Nowhere to go but forward.",
-      "Oh fun! It's a gate you need to open."
+      "What's that up ahead? Oh fun! It's a gate you need to open."
     ]
   },
   "npc":
@@ -42,6 +42,27 @@
           "Told you. I went the other way.",
           "My name? What are you, an RPG protagonist?",
           "... (only silence)"
+        ]
+      },
+      {
+        "id": "npc_02",
+        "content": [
+          "A beast may seem to block your way, but raw meat may its purpose sway.",
+          "...In other words, use raw meat to get rid of the beast blocking the way out."
+        ]
+      },
+      {
+        "id": "npc_03",
+        "content": [
+          "Please, heal me, if you can.",
+          "I... cannot express my gratitude enough. Here, take this key. It'll unlock your way out. I need to look after my friend. Maybe there is some way to save him still..."
+        ]
+      },
+      {
+        "id": "npc_04",
+        "content": [
+          "My chances are slim. Please, save my friend. He's in the other room.",
+          "Thanks. I feel amazing! But I need to get my friend out of here. Let's grab his key and scram!"
         ]
       }
       ]
