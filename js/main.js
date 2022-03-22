@@ -33,6 +33,11 @@ function createList() {
     {
       label: "Challenge One - ToDo",
       url: "challengeOne-ToDo/challengeOne-Modular/todo.html" 
+    },
+
+    {
+      label: "Challenge Two - Adventure",
+      url: "challengeTwo-Adventure/adventure.html"
     }
   ]
 
