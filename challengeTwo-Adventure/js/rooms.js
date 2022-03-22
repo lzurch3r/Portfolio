@@ -48,9 +48,15 @@ function renderRoomText(id, element, content) {
     element.appendChild(item1);
     element.appendChild(item2);
     element.appendChild(item3);
+
+    if (obj.id != "room_00") {
+      const backButton = document.createElement('button');
+      
+    }
     
   }
 }
+
 
 export default class Rooms {
   constructor() {
