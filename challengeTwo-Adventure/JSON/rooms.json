@@ -2,6 +2,7 @@
   "rooms": [
     {
       "id": "room_00",
+      "name": "The Beginning",
       "essential_text": "0",
       "flavor_text": "0",
       "npc_text":
@@ -19,7 +20,8 @@
     },
     {
       "id": "room_01",
-      "essential_text": "0",
+      "name": "Directions",
+      "essential_text": "1",
       "flavor_text": "1",
       "npc_text":
       {
@@ -36,8 +38,9 @@
     },
     {
       "id": "room_02",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "The First Hallway",
+      "essential_text": "2",
+      "flavor_text": "2",
       "npc_text":
       {
         "id": "-1",
@@ -53,8 +56,9 @@
     },
     {
       "id": "room_03",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "3",
+      "flavor_text": "3",
       "npc_text":
       {
         "id": "-1",
@@ -70,8 +74,9 @@
     },
     {
       "id": "room_04",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "4",
+      "flavor_text": "4",
       "npc_text":
       {
         "id": "-1",
@@ -87,8 +92,9 @@
     },
     {
       "id": "room_05",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "5",
+      "flavor_text": "5",
       "npc_text":
       {
         "id": "-1",
@@ -104,8 +110,9 @@
     },
     {
       "id": "room_06",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "6",
+      "flavor_text": "6",
       "npc_text":
       {
         "id": "-1",
@@ -121,8 +128,9 @@
     },
     {
       "id": "room_07",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "7",
+      "flavor_text": "7",
       "npc_text":
       {
         "id": "Jikenwa",
@@ -138,8 +146,9 @@
     },
     {
       "id": "room_08",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "8",
+      "flavor_text": "8",
       "npc_text":
       {
         "id": "-1",
@@ -155,8 +164,9 @@
     },
     {
       "id": "room_09",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "9",
+      "flavor_text": "9",
       "npc_text":
       {
         "id": "-1",
@@ -172,8 +182,9 @@
     },
     {
       "id": "room_10",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "10",
+      "flavor_text": "10",
       "npc_text":
       {
         "id": "??",
@@ -189,8 +200,9 @@
     },
     {
       "id": "room_11",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "11",
+      "flavor_text": "11",
       "npc_text":
       {
         "id": "-1",
@@ -206,8 +218,9 @@
     },
     {
       "id": "room_12",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "12",
+      "flavor_text": "12",
       "npc_text":
       {
         "id": "-1",
@@ -223,8 +236,9 @@
     },
     {
       "id": "room_13",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "13",
+      "flavor_text": "13",
       "npc_text":
       {
         "id": "??",
@@ -240,8 +254,9 @@
     },
     {
       "id": "room_14",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "14",
+      "flavor_text": "14",
       "npc_text":
       {
         "id": "-1",
@@ -257,8 +272,9 @@
     },
     {
       "id": "room_15",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "15",
+      "flavor_text": "15",
       "npc_text":
       {
         "id": "-1",
@@ -274,8 +290,9 @@
     },
     {
       "id": "room_16",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "16",
+      "flavor_text": "16",
       "npc_text":
       {
         "id": "-1",
@@ -291,8 +308,9 @@
     },
     {
       "id": "room_17",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "17",
+      "flavor_text": "17",
       "npc_text":
       {
         "id": "-1",
@@ -308,8 +326,9 @@
     },
     {
       "id": "room_18",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "18",
+      "flavor_text": "18",
       "npc_text":
       {
         "id": "-1",
@@ -325,8 +344,9 @@
     },
     {
       "id": "room_19",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "19",
+      "flavor_text": "19",
       "npc_text":
       {
         "id": "-1",
@@ -342,8 +362,9 @@
     },
     {
       "id": "room_20",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "20",
+      "flavor_text": "20",
       "npc_text":
       {
         "id": "-1",
@@ -359,8 +380,9 @@
     },
     {
       "id": "room_21",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "21",
+      "flavor_text": "21",
       "npc_text":
       {
         "id": "-1",
@@ -376,8 +398,9 @@
     },
     {
       "id": "room_22",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "22",
+      "flavor_text": "22",
       "npc_text":
       {
         "id": "This guy",
@@ -393,8 +416,9 @@
     },
     {
       "id": "room_23",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "23",
+      "flavor_text": "23",
       "npc_text":
       {
         "id": "-1",
@@ -410,8 +434,9 @@
     },
     {
       "id": "room_24",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "24",
+      "flavor_text": "24",
       "npc_text":
       {
         "id": "-1",
@@ -427,8 +452,9 @@
     },
     {
       "id": "room_25",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "25",
+      "flavor_text": "25",
       "npc_text":
       {
         "id": "-1",
@@ -444,8 +470,9 @@
     },
     {
       "id": "room_26",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "26",
+      "flavor_text": "26",
       "npc_text":
       {
         "id": "-1",
@@ -461,8 +488,9 @@
     },
     {
       "id": "room_27",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "27",
+      "flavor_text": "27",
       "npc_text":
       {
         "id": "(*Hands shaking*)",
@@ -478,8 +506,9 @@
     },
     {
       "id": "room_28",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "28",
+      "flavor_text": "28",
       "npc_text":
       {
         "id": "Dilapidated man",
@@ -495,8 +524,9 @@
     },
     {
       "id": "room_29",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "name": "",
+      "essential_text": "29",
+      "flavor_text": "29",
       "npc_text":
       {
         "id": "-1",

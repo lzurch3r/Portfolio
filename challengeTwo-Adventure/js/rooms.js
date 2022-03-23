@@ -22,7 +22,7 @@ function getNPCText(name, index, subIndex) {
     return "";
   }
   console.log(myNPCText.content[index]);
-  return `${name}: ` + myNPCText.content[index].content[subIndex];
+  return `${name}: "` + myNPCText.content[index].content[subIndex] + `"`;
 }
 
 function renderRoomText(id, element, content) {
