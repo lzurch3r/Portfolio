@@ -56,7 +56,7 @@
     },
     {
       "id": "room_03",
-      "name": "",
+      "name": "The First Roadblock",
       "essential_text": "3",
       "flavor_text": "3",
       "npc_text":
@@ -74,7 +74,7 @@
     },
     {
       "id": "room_04",
-      "name": "",
+      "name": "Salmon Spread",
       "essential_text": "4",
       "flavor_text": "4",
       "npc_text":
@@ -92,7 +92,7 @@
     },
     {
       "id": "room_05",
-      "name": "",
+      "name": "Down On the Corner",
       "essential_text": "5",
       "flavor_text": "5",
       "npc_text":
@@ -110,7 +110,7 @@
     },
     {
       "id": "room_06",
-      "name": "",
+      "name": "The First Solution",
       "essential_text": "6",
       "flavor_text": "6",
       "npc_text":
@@ -128,7 +128,7 @@
     },
     {
       "id": "room_07",
-      "name": "",
+      "name": "Time to Be an Extrovert",
       "essential_text": "7",
       "flavor_text": "7",
       "npc_text":
@@ -146,7 +146,7 @@
     },
     {
       "id": "room_08",
-      "name": "",
+      "name": "Feeling Good",
       "essential_text": "8",
       "flavor_text": "8",
       "npc_text":
@@ -164,7 +164,7 @@
     },
     {
       "id": "room_09",
-      "name": "",
+      "name": "The Second Hallway",
       "essential_text": "9",
       "flavor_text": "9",
       "npc_text":
@@ -182,7 +182,7 @@
     },
     {
       "id": "room_10",
-      "name": "",
+      "name": "The Choice",
       "essential_text": "10",
       "flavor_text": "10",
       "npc_text":
@@ -200,7 +200,7 @@
     },
     {
       "id": "room_11",
-      "name": "",
+      "name": "Finding Your Way",
       "essential_text": "11",
       "flavor_text": "11",
       "npc_text":
@@ -218,7 +218,7 @@
     },
     {
       "id": "room_12",
-      "name": "",
+      "name": "The Second Hallway",
       "essential_text": "12",
       "flavor_text": "12",
       "npc_text":
@@ -236,7 +236,7 @@
     },
     {
       "id": "room_13",
-      "name": "",
+      "name": "Meetin' Up With the Homie",
       "essential_text": "13",
       "flavor_text": "13",
       "npc_text":
@@ -254,7 +254,7 @@
     },
     {
       "id": "room_14",
-      "name": "",
+      "name": "A Delicate Situation",
       "essential_text": "14",
       "flavor_text": "14",
       "npc_text":
@@ -272,7 +272,7 @@
     },
     {
       "id": "room_15",
-      "name": "",
+      "name": "Look Both Ways",
       "essential_text": "15",
       "flavor_text": "15",
       "npc_text":
@@ -290,7 +290,7 @@
     },
     {
       "id": "room_16",
-      "name": "",
+      "name": "Something's Going Down",
       "essential_text": "16",
       "flavor_text": "16",
       "npc_text":
@@ -308,7 +308,7 @@
     },
     {
       "id": "room_17",
-      "name": "",
+      "name": "A New Hope",
       "essential_text": "17",
       "flavor_text": "17",
       "npc_text":
@@ -326,7 +326,7 @@
     },
     {
       "id": "room_18",
-      "name": "",
+      "name": "The Color of Royalty",
       "essential_text": "18",
       "flavor_text": "18",
       "npc_text":
@@ -344,7 +344,7 @@
     },
     {
       "id": "room_19",
-      "name": "",
+      "name": "The Smell of Fear",
       "essential_text": "19",
       "flavor_text": "19",
       "npc_text":
@@ -362,7 +362,7 @@
     },
     {
       "id": "room_20",
-      "name": "",
+      "name": "Sweet and Pungent Shrimp",
       "essential_text": "20",
       "flavor_text": "20",
       "npc_text":
@@ -380,7 +380,7 @@
     },
     {
       "id": "room_21",
-      "name": "",
+      "name": "What's for Dinner?",
       "essential_text": "21",
       "flavor_text": "21",
       "npc_text":
@@ -398,7 +398,7 @@
     },
     {
       "id": "room_22",
-      "name": "",
+      "name": "Unsettling Aura",
       "essential_text": "22",
       "flavor_text": "22",
       "npc_text":
@@ -416,7 +416,7 @@
     },
     {
       "id": "room_23",
-      "name": "",
+      "name": "The Arrival",
       "essential_text": "23",
       "flavor_text": "23",
       "npc_text":
@@ -434,7 +434,7 @@
     },
     {
       "id": "room_24",
-      "name": "",
+      "name": "The Long Hallway",
       "essential_text": "24",
       "flavor_text": "24",
       "npc_text":
@@ -452,7 +452,7 @@
     },
     {
       "id": "room_25",
-      "name": "",
+      "name": "You Can Go Your Own Way",
       "essential_text": "25",
       "flavor_text": "25",
       "npc_text":
@@ -470,7 +470,7 @@
     },
     {
       "id": "room_26",
-      "name": "",
+      "name": "The Royal Gates",
       "essential_text": "26",
       "flavor_text": "26",
       "npc_text":
@@ -488,12 +488,12 @@
     },
     {
       "id": "room_27",
-      "name": "",
+      "name": "Rigorous Dissonance",
       "essential_text": "27",
       "flavor_text": "27",
       "npc_text":
       {
-        "id": "(*Hands shaking*)",
+        "id": "Weary man",
         "index": "3",
         "subIndex": "0"
       },
@@ -506,7 +506,7 @@
     },
     {
       "id": "room_28",
-      "name": "",
+      "name": "Harmonious Loyalty",
       "essential_text": "28",
       "flavor_text": "28",
       "npc_text":
@@ -524,7 +524,7 @@
     },
     {
       "id": "room_29",
-      "name": "",
+      "name": "Out",
       "essential_text": "29",
       "flavor_text": "29",
       "npc_text":

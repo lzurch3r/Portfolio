@@ -27,9 +27,16 @@ function getNPCText(name, index, subIndex) {
 
 function renderRoomText(id, element, content) {
   const obj = content.find((room) => room.id == id);
-  console.log(id);
+  console.log(`Current room id: ${id}`);
   element.innerHTML = "";
   if (obj) {
+    // Create a header for the room (uses obj.name)
+    const headerElement = document.getElementById('room_header_window');
+    headerElement.innerHTML = "";
+    const headerItem = document.createElement('h2');
+    headerItem.innerHTML = `${obj.name}`;
+    headerElement.appendChild(headerItem);
+
     // Get text data from obj and fill into variables
     const essText = getEssentialText(parseInt(obj.essential_text));
     const flavText = getFlavorText(parseInt(obj.flavor_text));
