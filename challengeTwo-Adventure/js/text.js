@@ -1,7 +1,7 @@
 /// JS file for reading data from JSON objects and exporting arrays of text objects
-import { parseJSON, createArray } from "./utils.js";
+import { createArray, parseJSON } from "./utils.js";
 
-const url = './JSON/objects.json';
+const url = './JSON/text.json';
 const data = await parseJSON(url);
 
 function getID(container) {

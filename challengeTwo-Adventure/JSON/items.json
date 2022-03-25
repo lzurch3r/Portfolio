@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": "item_00",
+      "name": "Wooden Flute",
+      "description": "You can play a little tune with this.",
+      "onFail": "",
+      "onSuccess": "You played a little tune.",
+      "perishable": "false"
+    },
+    {
+      "id": "item_01",
+      "name": "Yellow Key",
+      "description": "Opens a Yellow Gate.",
+      "onFail": "Well, this is useless here.",
+      "onSuccess": "You opened the Yellow Gate.",
+      "perishable": "false"
+    },
+    {
+      "id": "item_02",
+      "name": "Purple Key",
+      "description": "Opens a Purple Gate.",
+      "onFail": "Well, this is useless here.",
+      "onSuccess": "You opened the Purple Gate.",
+      "perishable": "false"
+    },
+    {
+      "id": "item_03",
+      "name": "Green Key",
+      "description": "Opens a Green Gate.",
+      "onFail": "Well, this is useless here.",
+      "onSuccess": "You opened the Green Gate.",
+      "perishable": "false"
+    },
+    {
+      "id": "item_04",
+      "name": "Raw Meat",
+      "description": "Not suitable for human consumption. Maybe a beast would like it.",
+      "onFail": "You took out the Raw Meat. Nothing happened.",
+      "onSuccess": "You dangled the Raw Meat tantalizingly.",
+      "perishable": "true"
+    },
+    {
+      "id": "item_05",
+      "name": "Potion",
+      "description": "Looks like it may heal someone in bad health. You're in pretty good health.",
+      "onFail": "You took out the potion. There's no use for it now.",
+      "onSuccess": "You unstopped the cap and gave it to the man.",
+      "perishable": "true"
+    }
+  ]
+}

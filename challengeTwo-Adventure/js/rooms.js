@@ -1,6 +1,6 @@
 /// JS file for reading data from JSON objects and exporting arrays of room objects
 import { createArray, parseJSON, bindTouch } from "./utils.js";
-import { RoomEssentialText, RoomFlavorText, NPCText } from "./objects.js";
+import { RoomEssentialText, RoomFlavorText, NPCText } from "./text.js";
 
 const url = './JSON/rooms.json';
 const data = await parseJSON(url);
@@ -25,22 +25,28 @@ function getNPCText(name, index, subIndex) {
   return `${name}: "` + myNPCText.content[index].content[subIndex] + `"`;
 }
 
-function renderRoomText(id, element, content) {
+function getNewRoom(id, content) {
   const obj = content.find((room) => room.id == id);
-  console.log(`Current room id: ${id}`);
+
+  return obj;
+}
+
+function renderRoomText(id, element, content) {
+  const room = getNewRoom(id, content);
   element.innerHTML = "";
-  if (obj) {
-    // Create a header for the room (uses obj.name)
+  if (room) {
+    console.log(`Current room id: ${room.id}`);
+    // Create a header for the room (uses room.name)
     const headerElement = document.getElementById('room_header_window');
     headerElement.innerHTML = "";
     const headerItem = document.createElement('h2');
-    headerItem.innerHTML = `${obj.name}`;
+    headerItem.innerHTML = `${room.name}`;
     headerElement.appendChild(headerItem);
 
-    // Get text data from obj and fill into variables
-    const essText = getEssentialText(parseInt(obj.essential_text));
-    const flavText = getFlavorText(parseInt(obj.flavor_text));
-    const npcText = getNPCText(obj.npc_text.id, parseInt(obj.npc_text.index), parseInt(obj.npc_text.subIndex));
+    // Get text data from room and fill into variables
+    const essText = getEssentialText(parseInt(room.essential_text));
+    const flavText = getFlavorText(parseInt(room.flavor_text));
+    const npcText = getNPCText(room.npc_text.id, parseInt(room.npc_text.index), parseInt(room.npc_text.subIndex));
 
     // Create elements to put into the document
     const item1 = document.createElement('p');
@@ -69,10 +75,10 @@ function renderRoomText(id, element, content) {
     const element2 = document.getElementById('movement_options');
     element2.innerHTML = "";
 
-    const buttonUp    = createDirButton("button_up",    "UP",    obj.adj_room_id[0], element, content);
-    const buttonDown  = createDirButton("button_down",  "DOWN",  obj.adj_room_id[1], element, content);
-    const buttonLeft  = createDirButton("button_left",  "LEFT",  obj.adj_room_id[2], element, content);
-    const buttonRight = createDirButton("button_right", "RIGHT", obj.adj_room_id[3], element, content);
+    const buttonUp    = createDirButton("button_up",    "UP",    room.adj_room_id[0], element, content);
+    const buttonDown  = createDirButton("button_down",  "DOWN",  room.adj_room_id[1], element, content);
+    const buttonLeft  = createDirButton("button_left",  "LEFT",  room.adj_room_id[2], element, content);
+    const buttonRight = createDirButton("button_right", "RIGHT", room.adj_room_id[3], element, content);
 
     if (buttonUp)    element2.appendChild(buttonUp);
     if (buttonDown)  element2.appendChild(buttonDown);
