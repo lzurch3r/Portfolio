@@ -17,6 +17,36 @@ function getItem(id, content) {
   return inventory;
 }
 
+function getItemDescription(content) {
+  const item = document.createElement('p');
+  item.setAttribute('id', 'item_description');
+
+  item.innerHTML = content;
+
+  return item;
+}
+
+function setItemDescription(event, element, content) {
+  //console.log(event);
+  element.innerHTML = "";
+  if (event.type == "mouseover" || event.type == "touchend") {
+    const item = getItemDescription(content.description);
+    element.appendChild(item);
+  }
+}
+
+function bindItemEvents(item, element, content) {
+  item.addEventListener("mouseover", e => {
+    //console.log(e.type);
+    setItemDescription(e, element, content);
+  });
+
+  item.addEventListener("mouseleave", e => {
+    element.innerHTML = "";
+    //console.log(e.type);
+  });
+}
+
 function renderInventory(element, content) {
   element.innerHTML = "";
 
@@ -24,7 +54,10 @@ function renderInventory(element, content) {
     content.forEach((item) => {
       const htmlItem = document.createElement('li');
       htmlItem.innerHTML = `${item.name}`;
+      //htmlItem.addEventListener("")
 
+      bindItemEvents(htmlItem, document.getElementById('item_description_window'), item);
+      
       element.appendChild(htmlItem);
     });
   }

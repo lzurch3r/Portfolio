@@ -102,7 +102,6 @@ function createDirButton(name, direction, id, element, content) {
         renderRoomText(id, element, content);
       });
       newButton.addEventListener("click", e => {
-        e.preventDefault();
         renderRoomText(id, element, content);
       });
       
