@@ -3,31 +3,31 @@
     {
       "id": "room_00",
       "name": "The Beginning",
-      "essential_text": "0",
-      "flavor_text": "0",
+      "essential_text": 0,
+      "flavor_text": 0,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_01",
-        "-1",
-        "-1",
-        "-1"
+        null,
+        null,
+        null
       ]
     },
     {
       "id": "room_01",
       "name": "Directions",
-      "essential_text": "1",
-      "flavor_text": "1",
+      "essential_text": 1,
+      "flavor_text": 1,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_29",
@@ -39,17 +39,17 @@
     {
       "id": "room_02",
       "name": "The First Hallway",
-      "essential_text": "2",
-      "flavor_text": "2",
+      "essential_text": 2,
+      "flavor_text": 2,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
-        "-1",
+        null,
+        null,
         "room_01",
         "room_03"
       ]
@@ -57,80 +57,80 @@
     {
       "id": "room_03",
       "name": "The First Roadblock",
-      "essential_text": "3",
-      "flavor_text": "3",
+      "essential_text": 3,
+      "flavor_text": 3,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_08",
         "room_04",
         "room_02",
-        "-1"
+        null
       ]
     },
     {
       "id": "room_04",
       "name": "Salmon Spread",
-      "essential_text": "4",
-      "flavor_text": "4",
+      "essential_text": 4,
+      "flavor_text": 4,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_03",
         "room_05",
-        "-1",
+        null,
         "room_07"
       ]
     },
     {
       "id": "room_05",
       "name": "Down On the Corner",
-      "essential_text": "5",
-      "flavor_text": "5",
+      "essential_text": 5,
+      "flavor_text": 5,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_04",
-        "-1",
+        null,
         "room_06",
-        "-1"
+        null
       ]
     },
     {
       "id": "room_06",
       "name": "The First Solution",
-      "essential_text": "6",
-      "flavor_text": "6",
+      "essential_text": 6,
+      "flavor_text": 6,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
-        "-1",
-        "-1",
+        null,
+        null,
+        null,
         "room_05"
       ]
     },
     {
       "id": "room_07",
       "name": "Time to Be an Extrovert",
-      "essential_text": "7",
-      "flavor_text": "7",
+      "essential_text": 7,
+      "flavor_text": 7,
       "npc_text":
       {
         "id": "Jikenwa",
@@ -138,53 +138,53 @@
         "subIndex": "0"
       },
       "adj_room_id": [
-        "-1",
-        "-1",
+        null,
+        null,
         "room_04",
-        "-1"
+        null
       ]
     },
     {
       "id": "room_08",
       "name": "Feeling Good",
-      "essential_text": "8",
-      "flavor_text": "8",
+      "essential_text": 8,
+      "flavor_text": 8,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_09",
         "room_03",
-        "-1",
-        "-1"
+        null,
+        null
       ]
     },
     {
       "id": "room_09",
       "name": "The Second Hallway",
-      "essential_text": "9",
-      "flavor_text": "9",
+      "essential_text": 9,
+      "flavor_text": 9,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_10",
         "room_08",
-        "-1",
-        "-1"
+        null,
+        null
       ]
     },
     {
       "id": "room_10",
       "name": "The Choice",
-      "essential_text": "10",
-      "flavor_text": "10",
+      "essential_text": 10,
+      "flavor_text": 10,
       "npc_text":
       {
         "id": "??",
@@ -192,7 +192,7 @@
         "subIndex": "0"
       },
       "adj_room_id": [
-        "-1",
+        null,
         "room_09",
         "room_11",
         "room_25"
@@ -201,17 +201,17 @@
     {
       "id": "room_11",
       "name": "Finding Your Way",
-      "essential_text": "11",
-      "flavor_text": "11",
+      "essential_text": 11,
+      "flavor_text": 11,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
-        "-1",
+        null,
+        null,
         "room_12",
         "room_10"
       ]
@@ -219,26 +219,26 @@
     {
       "id": "room_12",
       "name": "The Second Hallway",
-      "essential_text": "12",
-      "flavor_text": "12",
+      "essential_text": 12,
+      "flavor_text": 12,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_13",
-        "-1",
-        "-1",
+        null,
+        null,
         "room_11"
       ]
     },
     {
       "id": "room_13",
       "name": "Meetin' Up With the Homie",
-      "essential_text": "13",
-      "flavor_text": "13",
+      "essential_text": 13,
+      "flavor_text": 13,
       "npc_text":
       {
         "id": "??",
@@ -247,7 +247,7 @@
       },
       "adj_room_id": [
         "room_14",
-        "-1",
+        null,
         "room_12",
         "room_23"
       ]
@@ -255,31 +255,31 @@
     {
       "id": "room_14",
       "name": "A Delicate Situation",
-      "essential_text": "14",
-      "flavor_text": "14",
+      "essential_text": 14,
+      "flavor_text": 14,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_15",
         "room_13",
-        "-1",
-        "-1"
+        null,
+        null
       ]
     },
     {
       "id": "room_15",
       "name": "Look Both Ways",
-      "essential_text": "15",
-      "flavor_text": "15",
+      "essential_text": 15,
+      "flavor_text": 15,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_21",
@@ -291,17 +291,17 @@
     {
       "id": "room_16",
       "name": "Something's Going Down",
-      "essential_text": "16",
-      "flavor_text": "16",
+      "essential_text": 16,
+      "flavor_text": 16,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
-        "-1",
+        null,
+        null,
         "room_17",
         "room_15"
       ]
@@ -309,53 +309,53 @@
     {
       "id": "room_17",
       "name": "A New Hope",
-      "essential_text": "17",
-      "flavor_text": "17",
+      "essential_text": 17,
+      "flavor_text": 17,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
+        null,
         "room_18",
-        "-1",
+        null,
         "room_16"
       ]
     },
     {
       "id": "room_18",
       "name": "The Color of Royalty",
-      "essential_text": "18",
-      "flavor_text": "18",
+      "essential_text": 18,
+      "flavor_text": 18,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_17",
-        "-1",
-        "-1",
-        "-1"
+        null,
+        null,
+        null
       ]
     },
     {
       "id": "room_19",
       "name": "The Smell of Fear",
-      "essential_text": "19",
-      "flavor_text": "19",
+      "essential_text": 19,
+      "flavor_text": 19,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
-        "-1",
+        null,
+        null,
         "room_15",
         "room_20"
       ]
@@ -363,44 +363,44 @@
     {
       "id": "room_20",
       "name": "Sweet and Pungent Shrimp",
-      "essential_text": "20",
-      "flavor_text": "20",
+      "essential_text": 20,
+      "flavor_text": 20,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
-        "-1",
+        null,
+        null,
         "room_19",
-        "-1"
+        null
       ]
     },
     {
       "id": "room_21",
       "name": "What's for Dinner?",
-      "essential_text": "21",
-      "flavor_text": "21",
+      "essential_text": 21,
+      "flavor_text": 21,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
+        null,
         "room_15",
         "room_22",
-        "-1"
+        null
       ]
     },
     {
       "id": "room_22",
       "name": "Unsettling Aura",
-      "essential_text": "22",
-      "flavor_text": "22",
+      "essential_text": 22,
+      "flavor_text": 22,
       "npc_text":
       {
         "id": "This guy",
@@ -408,62 +408,62 @@
         "subIndex": "0"
       },
       "adj_room_id": [
-        "-1",
-        "-1",
-        "-1",
+        null,
+        null,
+        null,
         "room_21"
       ]
     },
     {
       "id": "room_23",
       "name": "The Arrival",
-      "essential_text": "23",
-      "flavor_text": "23",
+      "essential_text": 23,
+      "flavor_text": 23,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
+        null,
         "room_24",
         "room_13",
-        "-1"
+        null
       ]
     },
     {
       "id": "room_24",
       "name": "The Long Hallway",
-      "essential_text": "24",
-      "flavor_text": "24",
+      "essential_text": 24,
+      "flavor_text": 24,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_23",
-        "-1",
+        null,
         "room_25",
-        "-1"
+        null
       ]
     },
     {
       "id": "room_25",
       "name": "You Can Go Your Own Way",
-      "essential_text": "25",
-      "flavor_text": "25",
+      "essential_text": 25,
+      "flavor_text": 25,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
-        "-1",
+        null,
+        null,
         "room_10",
         "room_24"
       ]
@@ -471,26 +471,26 @@
     {
       "id": "room_26",
       "name": "The Royal Gates",
-      "essential_text": "26",
-      "flavor_text": "26",
+      "essential_text": 26,
+      "flavor_text": 26,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
         "room_28",
         "room_27",
-        "-1",
+        null,
         "room_01"
       ]
     },
     {
       "id": "room_27",
       "name": "Rigorous Dissonance",
-      "essential_text": "27",
-      "flavor_text": "27",
+      "essential_text": 27,
+      "flavor_text": 27,
       "npc_text":
       {
         "id": "Weary man",
@@ -499,16 +499,16 @@
       },
       "adj_room_id": [
         "room_26",
-        "-1",
-        "-1",
-        "-1"
+        null,
+        null,
+        null
       ]
     },
     {
       "id": "room_28",
       "name": "Harmonious Loyalty",
-      "essential_text": "28",
-      "flavor_text": "28",
+      "essential_text": 28,
+      "flavor_text": 28,
       "npc_text":
       {
         "id": "Dilapidated man",
@@ -516,28 +516,28 @@
         "subIndex": "0"
       },
       "adj_room_id": [
-        "-1",
+        null,
         "room_26",
-        "-1",
-        "-1"
+        null,
+        null
       ]
     },
     {
       "id": "room_29",
       "name": "Out",
-      "essential_text": "29",
-      "flavor_text": "29",
+      "essential_text": 29,
+      "flavor_text": 29,
       "npc_text":
       {
-        "id": "-1",
-        "index": "-1",
-        "subIndex": "-1"
+        "id": null,
+        "index": null,
+        "subIndex": null
       },
       "adj_room_id": [
-        "-1",
+        null,
         "room_01",
-        "-1",
-        "-1"
+        null,
+        null
       ]
     }
   ]

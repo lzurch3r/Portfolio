@@ -8,13 +8,10 @@ function getItem(id, content) {
   if (obj) {
     console.log(`Getting item: '${obj.name}' with id '${obj.id}'`);
 
-    // Add item to inventory array and return it
-    inventory.push(obj);
-
-    return inventory;
+    return obj;
   }
 
-  return inventory;
+  return null;
 }
 
 function getItemDescription(content) {
@@ -33,6 +30,26 @@ function setItemDescription(event, element, content) {
     const item = getItemDescription(content.description);
     element.appendChild(item);
   }
+}
+
+function getItemUsage(obj, success) {
+    // Check for success in item usage
+    if (success) {
+    // Return success text if success == true
+      return obj.onSuccess;
+    }
+    
+    // Return failure text if success == false
+    else if (!success) {
+    // Return error text as default value
+      return obj.onFail;
+    }
+
+  return `Error: Cannot find item or return text`;
+}
+
+function isPerishable(obj) {
+  return obj.perishable;
 }
 
 function bindItemEvents(item, element, content) {
@@ -64,7 +81,8 @@ function renderInventory(element, content) {
 }
 
 export default class Inventory {
-  constructor() {
+  constructor(id) {
+    this.id = id;
     this.content = inventory;
 
     this.addItem('item_00');
@@ -73,9 +91,34 @@ export default class Inventory {
 
   // Takes an item id and adds it to the inventory
   addItem(id) {
-    this.content = getItem(id, myItems.content);
+    const obj = getItem(id, myItems.content);
 
-    this.displayInventory();
+    if (obj) {
+      // Add item to inventory array
+      inventory.push(obj);
+      this.content = inventory;
+  
+      this.displayInventory();
+    }
+  }
+
+  useItem(id, element, success) {
+    const obj = getItem(id, this.content);
+
+    if (obj) {
+      console.log(getItemUsage(obj, success));
+
+      element.innerHTML = getItemUsage(obj, success);
+
+      // Check if an item is perishable and successfully used;
+      //   if so, delete it from inventory[]
+      if (success && isPerishable(obj)) {
+        inventory.splice(inventory.indexOf(obj),1);
+
+        this.content = inventory;
+        this.displayInventory();
+      }
+    }
   }
   
   displayInventory() {

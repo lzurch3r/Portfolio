@@ -18,7 +18,7 @@ function getFlavorText(index) {
 }
 
 function getNPCText(name, index, subIndex) {
-  if (index == -1) {
+  if (!index) {
     return "";
   }
   console.log(myNPCText.content[index]);
@@ -44,9 +44,9 @@ function renderRoomText(id, element, content) {
     headerElement.appendChild(headerItem);
 
     // Get text data from room and fill into variables
-    const essText = getEssentialText(parseInt(room.essential_text));
-    const flavText = getFlavorText(parseInt(room.flavor_text));
-    const npcText = getNPCText(room.npc_text.id, parseInt(room.npc_text.index), parseInt(room.npc_text.subIndex));
+    const essText = getEssentialText(room.essential_text);
+    const flavText = getFlavorText(room.flavor_text);
+    const npcText = getNPCText(room.npc_text.id, room.npc_text.index, room.npc_text.subIndex);
 
     // Create elements to put into the document
     const item1 = document.createElement('p');
@@ -90,7 +90,7 @@ function renderRoomText(id, element, content) {
 // Creates and returns a directional button
 function createDirButton(name, direction, id, element, content) {
   
-  if (id != "-1") {  // Checks for an unusable direction; otherwise, return null
+  if (id) {  // Checks for an unusable direction; otherwise, return null
     const newButton = document.createElement('button');  //First, we create a button
     newButton.setAttribute('type', 'button');  // Set attributes 'type'
     newButton.setAttribute('id', name);        //   and 'id'
@@ -113,12 +113,13 @@ function createDirButton(name, direction, id, element, content) {
 export default class Rooms {
   constructor(id, element) {
     this.content = createArray(data.rooms);
+    this.roomID = id;
     console.log(this.content);
 
-    this.displayText(id, element);
+    this.displayText(element);
   }
 
-  displayText(roomID, element) {
-    renderRoomText(roomID, element, this.content);
+  displayText(element) {
+    renderRoomText(this.roomID, element, this.content);
   }
 }
