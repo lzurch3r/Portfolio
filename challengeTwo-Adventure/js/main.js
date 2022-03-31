@@ -115,7 +115,7 @@ function buildTitleScreen() {
 
     try {
       if (!key)
-        throw new Error("Must enter a key in #key_input");
+        throw new Error("Must enter a key in #key_input to make a New Game");
       else if (key) {
         if (loadAdventure(key)) {
           throw new Error("Adventure already exists with that key!");
@@ -145,7 +145,7 @@ function buildTitleScreen() {
 
     try {
       if (!key)
-        throw new Error("Must enter a key in #key_input");
+        throw new Error("Must enter a key in #key_input to load an existing game");
       else if (key) {
         if (!loadAdventure(key))
           throw new Error("Failed to load obj 'myAdventure'");
@@ -165,7 +165,7 @@ function buildTitleScreen() {
 
     try {
       if (!key)
-        throw new Error("Must enter a key in #key_input");
+        throw new Error("Must enter a key in #key_input to delete an existing game");
       else if (key) {
         if (!loadAdventure(key))
           throw new Error("Failed to delete obj 'myAdventure'");
