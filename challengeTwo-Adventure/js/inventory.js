@@ -1,4 +1,5 @@
 import Items from "./items.js";
+import { parseJSON, createArray } from "./utils.js";
 
 const myItems = new Items();
 let inventory = [];
@@ -64,18 +65,24 @@ function bindItemEvents(item, element, content) {
   });
 }
 
-function renderInventory(element, content) {
+function renderInventory(element, content, images) {
   element.innerHTML = "";
 
   if (content.length > 0) {
     content.forEach((item) => {
       const htmlItem = document.createElement('li');
       htmlItem.innerHTML = `${item.name}`;
-      //htmlItem.addEventListener("")
 
       bindItemEvents(htmlItem, document.getElementById('item_description_window'), item);
       
       element.appendChild(htmlItem);
+
+      const img = document.createElement('img');
+      console.log(images);
+      console.log(images[item.index]);
+      img.setAttribute('src', images[item.index]);
+
+      element.appendChild(img);
     });
   }
 }
@@ -84,6 +91,7 @@ export default class Inventory {
   constructor(id) {
     this.id = id;
     this.content = inventory;
+    this.images = myItems.images;
 
     this.addItem('item_00');
     console.log(`Inventory: ${this.content}`);
@@ -122,6 +130,6 @@ export default class Inventory {
   }
   
   displayInventory() {
-    renderInventory(document.getElementById('inventory'), this.content);
+    renderInventory(document.getElementById('inventory'), this.content, this.images);
   }
 };

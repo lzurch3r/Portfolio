@@ -1,11 +1,28 @@
 import Adventure from "./adventure.js";
 import { qs, readFromLS, writeToLS, bindTouch } from "./utils.js";
 
+const myAdventure = new Adventure("Lev");
 // const key = "Lev";
 // const myAdventure = new Adventure(key);
 // saveAdventure(key, myAdventure);
-let myAdventure = null;
+/*let myAdventure = null;
 buildTitleScreen();
+const btn = document.getElementById('btnClick');
+const image = document.getElementById('image');
+
+btn.addEventListener('click', async function () {
+    const url = "https://pokeapi.co/api/v2/item/1/";
+    
+    const response = await fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        return data;
+      });
+    
+    if (response)
+      image.src = response.sprites.default;
+});
 
 function saveAdventure(key, data) {
   writeToLS(key, data);
@@ -68,4 +85,4 @@ function buildTitleScreen() {
     }
     else console.log(`Error: cannot find adventure`);
   });
-}
+}*/

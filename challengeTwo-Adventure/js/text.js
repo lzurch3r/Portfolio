@@ -14,7 +14,7 @@ export class RoomEssentialText {
     this.id = getID(data.room_essential_text);
     this.content = createArray(data.room_essential_text.content);
     console.log(this.id);
-    console.log(this.content);
+    //console.log(this.content);
   }
 };
 
@@ -24,7 +24,7 @@ export class RoomFlavorText {
     this.id = getID(data.room_flavor_text);
     this.content = createArray(data.room_flavor_text.content);
     console.log(this.id);
-    console.log(this.content);
+    //console.log(this.content);
   }
 };
 
@@ -34,6 +34,6 @@ export class NPCText {
     this.id = getID(data.npc);
     this.content = createArray(data.npc.content);
     console.log(this.id);
-    console.log(this.content);
+    //console.log(this.content);
   }
 };

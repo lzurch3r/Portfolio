@@ -31,9 +31,9 @@ export async function parseJSON(filePath) {
     }
     return response.json();
     })
-  .then(json => {
-    console.log(json);
-    return json;
+    .then(json => {
+      console.log(json);
+      return json;
   });
 
   return data;
