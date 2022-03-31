@@ -78,28 +78,46 @@ function renderInventory(element, content, images) {
       element.appendChild(htmlItem);
 
       const img = document.createElement('img');
-      console.log(images);
-      console.log(images[item.index]);
-      img.setAttribute('src', images[item.index]);
+      const imgURL = getItemImg(images[item.index]);
+      console.log(imgURL);
+      console.log(images.length);
+      if (imgURL) {
+        img.setAttribute('src', images[item.index]);
 
-      element.appendChild(img);
+        element.appendChild(img);
+      }
     });
   }
+}
+
+function getItemImg(url) {
+  const response = fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data.sprites.default);
+      return data.sprites.default;
+    })
+
+  if (response) {
+    return response;
+  }
+  return null;
 }
 
 export default class Inventory {
   constructor(id) {
     this.id = id;
     this.content = inventory;
-    this.images = myItems.images;
+    this.images = createArray(myItems.data.images);
 
     this.addItem('item_00');
     console.log(`Inventory: ${this.content}`);
   }
 
+  
   // Takes an item id and adds it to the inventory
   addItem(id) {
-    const obj = getItem(id, myItems.content);
+    const obj = getItem(id, myItems.data.items);
 
     if (obj) {
       // Add item to inventory array

@@ -5,13 +5,25 @@ import { readFromLS, writeToLS } from "./utils.js";
 let locks = {"YGate": true, "PGate": true, "GGate": true};
 
 export default class Adventure {
-  constructor(id) {
+  constructor(id, content) {
     this.id = id;
-    this.inventory = new Inventory(id);
-    this.currentRoomID = new Rooms("room_00", document.getElementById("text_window"));
+    this.content = content;
+    console.log(this.content);
     console.log(`Adventure ID: ${this.id}`);
-    console.table(locks);
+      console.table(locks);
+  }
 
-    this.currentRoomID.displayText(document.getElementById("text_window"));
+  init(exists) {
+    if (exists) {
+      this.inventory = new Inventory(this.id);
+      this.currentRoom = new Rooms(this.content.currentRoom.roomID, document.getElementById("text_window"));
+      console.log(`Current Room ID: ${this.currentRoom}`);
+    }
+    else if (!exists) {
+      this.inventory = new Inventory(this.id);
+      this.currentRoom = new Rooms("room_00", document.getElementById("text_window"));
+  
+      // this.currentRoom.displayText(document.getElementById("text_window"));
+    }
   }
 }
