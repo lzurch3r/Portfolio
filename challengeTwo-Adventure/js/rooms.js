@@ -1,5 +1,5 @@
 /// JS file for reading data from JSON objects and exporting arrays of room objects
-import { createArray, parseJSON, bindTouch } from "./utils.js";
+import { createArray, parseJSON} from "./utils.js";
 import { RoomEssentialText, RoomFlavorText, NPCText } from "./text.js";
 
 const url = './JSON/rooms.json';

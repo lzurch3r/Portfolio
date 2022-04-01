@@ -1,10 +1,7 @@
 import Rooms from "./rooms.js";
 import Inventory from "./inventory.js";
-import { readFromLS, writeToLS } from "./utils.js";
 
 let locks = {"YGate": true, "PGate": true, "GGate": true};
-
-
 
 export default class Adventure {
   constructor(id, content) {

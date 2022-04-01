@@ -14,15 +14,18 @@ btn.addEventListener('click', async function () {
     const int = Math.floor(Math.random() * 1000);
     console.log(int);
     const url = `https://pokeapi.co/api/v2/item/${int}/`;
+    let response = null;
     
-    const response = await fetch(url)
+    while(!response) {
+      response = await fetch(url)
       .then(response => response.json())
       .then(data => {
         console.log(data.id + " " + data.name + " " + data.sprites.default);
         return data;
       });
+    }
     
-      image.src = response.sprites.default;
+    image.src = response.sprites.default;
 });
 
 function saveAdventure(key, data) {
