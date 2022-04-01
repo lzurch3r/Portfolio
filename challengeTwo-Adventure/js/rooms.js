@@ -28,7 +28,6 @@ function getNPCText(name, index, subIndex) {
 
 function getNewRoom(id, content) {
   const obj = content.find((room) => room.id == id);
-
   return obj;
 }
 
