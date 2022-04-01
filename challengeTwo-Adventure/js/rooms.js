@@ -4,6 +4,7 @@ import { RoomEssentialText, RoomFlavorText, NPCText } from "./text.js";
 
 const url = './JSON/rooms.json';
 const data = await parseJSON(url);
+let currentRoomID = null;
 
 const myEssentialText = new RoomEssentialText();
 const myFlavorText = new RoomFlavorText();
@@ -99,9 +100,13 @@ function createDirButton(name, direction, id, element, content) {
       //Adds touch and click capabilities to newButton
       newButton.addEventListener("touchend", e => {
         e.preventDefault();
+        currentRoomID = id;
+        console.log(currentRoomID);
         renderRoomText(id, element, content);
       });
       newButton.addEventListener("click", e => {
+        currentRoomID = id;
+        console.log(currentRoomID);
         renderRoomText(id, element, content);
       });
       
@@ -114,9 +119,16 @@ export default class Rooms {
   constructor(id, element) {
     this.content = createArray(data.rooms);
     this.roomID = id;
+    currentRoomID = this.roomID;
     console.log(this.content);
 
     this.displayText(element);
+  }
+
+  getRoomID() {
+    this.roomID = currentRoomID;
+    console.log(this.roomID);
+    return this.roomID;
   }
 
   displayText(element) {

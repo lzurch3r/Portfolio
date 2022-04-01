@@ -47,9 +47,8 @@ function deleteAdventure(key) {
 
 function buildAdventure(adventure) {
   if (adventure) {
-    console.log(adventure);
+    // console.log(adventure);
     adventure.init();
-  }
 
   const content =  {
     "inventory": {
@@ -57,22 +56,39 @@ function buildAdventure(adventure) {
         "content": adventure.inventory.content
     },
     "currentRoomID": {
-        "roomID": adventure.roomID
+        "roomID": adventure.getCurrentRoomID()
     }
   }
 
   saveAdventure(adventure.id, content);
 
-  const buttonSaveGame = document.createElement('button');
+  const btnSaveGame = createGameButton('save_game_button', "Save Game");
+  const btnElement = document.getElementById('game_buttons');
+  btnElement.innerHTML = "";
+
+  btnElement.appendChild(btnSaveGame);
+
+  bindTouch('#save_game_button', function() {
+    const content = {
+    "inventory": {
+        "id": adventure.inventory.id,
+        "content": adventure.inventory.content
+    },
+    "currentRoomID": {
+        "roomID": adventure.getCurrentRoomID()
+    }
+  }
+      saveAdventure(adventure.id, content);
+    });  
+  }
 }
-function createTitleButton(id, html) {
+function createGameButton(id, html) {
   const newButton = document.createElement('button');
   newButton.setAttribute('id', id);
   newButton.innerHTML = html;
 
   return newButton; 
 }
-
 function buildTitleScreen() {
   // Build the title
   const element = document.getElementById('room_header_window');
@@ -83,15 +99,15 @@ function buildTitleScreen() {
   title.innerHTML = "Challenge Two - Adventure";
 
   // Build input and 'play' button
-  const element2 = document.getElementById('text_window');
+  const element2 = document.getElementById('game_buttons');
 
   const inputID = document.createElement('input');
   inputID.setAttribute('id', 'key_input');
   inputID.setAttribute('placeholder', "type adventure ID");
 
-  const buttonNewGame = createTitleButton('new_game_button', "New Game");
-  const buttonLoadGame = createTitleButton('load_game_button', "Load Game");
-  const buttonDelGame = createTitleButton('delete_game_button', "Delete Game");
+  const buttonNewGame  = createGameButton('new_game_button', "New Game");
+  const buttonLoadGame = createGameButton('load_game_button', "Load Game");
+  const buttonDelGame  = createGameButton('delete_game_button', "Delete Game");
 //   buttonPlay.addEventListener('keyup', function(event) {
 //     if (event.key === 'Enter') {
 //       event.preventDefault();

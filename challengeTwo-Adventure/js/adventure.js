@@ -4,6 +4,8 @@ import { readFromLS, writeToLS } from "./utils.js";
 
 let locks = {"YGate": true, "PGate": true, "GGate": true};
 
+
+
 export default class Adventure {
   constructor(id, content) {
     this.id = id;
@@ -18,5 +20,10 @@ export default class Adventure {
       this.inventory = new Inventory(this.inventory.id);
       this.currentRoom = new Rooms(this.roomID, document.getElementById("text_window"));
       console.log(`Current Room ID: ${this.currentRoom}`);
+  }
+
+  getCurrentRoomID() {
+    this.roomID = this.currentRoom.getRoomID();
+    return this.roomID;
   }
 }

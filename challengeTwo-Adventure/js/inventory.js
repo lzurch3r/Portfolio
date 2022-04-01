@@ -111,7 +111,7 @@ export default class Inventory {
     this.images = createArray(myItems.data.images);
 
     this.addItem('item_00');
-    console.log(`Inventory: ${this.content}`);
+    console.log(this.content);
   }
 
   
