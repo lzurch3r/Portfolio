@@ -4,6 +4,10 @@ export function qs(selectorName) {
   return document.querySelector(selectorName);  //returns selected HTML element
 }
 
+export function qsAll(selectorName) {
+  return document.querySelectorAll(selectorName); //returns all HTML elements with selectorName
+}
+
 export function readFromLS(key) {
   return JSON.parse(localStorage.getItem(key));
 }

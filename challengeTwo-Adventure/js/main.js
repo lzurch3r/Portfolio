@@ -1,12 +1,12 @@
 import Adventure from "./adventure.js";
 import { qs, readFromLS, writeToLS, bindTouch } from "./utils.js";
 
-// const myAdventure = new Adventure("Lev");
-// const key = "Lev";
-// const myAdventure = new Adventure(key);
-// saveAdventure(key, myAdventure);
-let myAdventure = null;
-buildTitleScreen();
+//*** DEBUG TESTING ***/
+const myAdventure = new Adventure("Lev", loadAdventure("Lev"));
+buildAdventure(myAdventure);
+
+// let myAdventure = null;
+// buildTitleScreen();
 const btn = document.getElementById('btnClick');
 const image = document.getElementById('image');
 
@@ -82,7 +82,7 @@ function buildAdventure(adventure) {
     }
   }
       saveAdventure(adventure.id, content);
-    });  
+    });
   }
 }
 function createGameButton(id, html) {
