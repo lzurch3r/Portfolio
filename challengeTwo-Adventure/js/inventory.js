@@ -77,15 +77,15 @@ function renderInventory(element, content, images) {
       
       element.appendChild(htmlItem);
 
-      const img = document.createElement('img');
-      const imgURL = getItemImg(images[item.index]);
-      console.log(imgURL);
-      console.log(images.length);
-      if (imgURL) {
-        img.setAttribute('src', images[item.index]);
+      // const img = document.createElement('img');
+      // const imgURL = getItemImg(images[item.index]);
+      // console.log(imgURL);
+      // console.log(images.length);
+      // if (imgURL) {
+      //   img.setAttribute('src', images[item.index]);
 
-        element.appendChild(img);
-      }
+      //   element.appendChild(img);
+      // }
     });
   }
 }

@@ -4,6 +4,7 @@ import { qs, readFromLS, writeToLS, bindTouch } from "./utils.js";
 //*** DEBUG TESTING ***/
 const myAdventure = new Adventure("Lev", loadAdventure("Lev"));
 buildAdventure(myAdventure);
+/*** END DEBUG ***/
 
 // let myAdventure = null;
 // buildTitleScreen();
@@ -55,12 +56,13 @@ function buildAdventure(adventure) {
 
   const content =  {
     "inventory": {
-        "id": adventure.inventory.id,
-        "content": adventure.inventory.content
+        "id": adventure.getCurrentInventory().id,
+        "content": adventure.getCurrentInventory().content
     },
     "currentRoomID": {
         "roomID": adventure.getCurrentRoomID()
-    }
+    },
+    "events": adventure.getCurrentEvents()
   }
 
   saveAdventure(adventure.id, content);
@@ -79,7 +81,8 @@ function buildAdventure(adventure) {
     },
     "currentRoomID": {
         "roomID": adventure.getCurrentRoomID()
-    }
+    },
+    "events": adventure.getCurrentEvents()
   }
       saveAdventure(adventure.id, content);
     });

@@ -1,10 +1,11 @@
 /// JS file for reading data from JSON objects and exporting arrays of room objects
-import { createArray, parseJSON} from "./utils.js";
+import { createArray, parseJSON, qsAll, qs,  bindTouch} from "./utils.js";
 import { RoomEssentialText, RoomFlavorText, NPCText } from "./text.js";
 
 const url = './JSON/rooms.json';
 const data = await parseJSON(url);
 let currentRoomID = null;
+let roomEvents = null;
 
 const myEssentialText = new RoomEssentialText();
 const myFlavorText = new RoomFlavorText();
@@ -31,7 +32,8 @@ function getNewRoom(id, content) {
   return obj;
 }
 
-function renderRoomText(id, element, content) {
+function renderRoom(id, element, content, events) {
+  console.log(`MOVING to new room... ID: ${id}`);
   const room = getNewRoom(id, content);
   element.innerHTML = "";
   if (room) {
@@ -75,20 +77,73 @@ function renderRoomText(id, element, content) {
     const element2 = document.getElementById('movement_options');
     element2.innerHTML = "";
 
-    const buttonUp    = createDirButton("button_up",    "UP",    room.adj_room_id[0], element, content);
-    const buttonDown  = createDirButton("button_down",  "DOWN",  room.adj_room_id[1], element, content);
-    const buttonLeft  = createDirButton("button_left",  "LEFT",  room.adj_room_id[2], element, content);
-    const buttonRight = createDirButton("button_right", "RIGHT", room.adj_room_id[3], element, content);
+    const buttonUp    = createDirButton("button_up",    "UP",    room.adj_room_id[0], element, content, events);
+    const buttonDown  = createDirButton("button_down",  "DOWN",  room.adj_room_id[1], element, content, events);
+    const buttonLeft  = createDirButton("button_left",  "LEFT",  room.adj_room_id[2], element, content, events);
+    const buttonRight = createDirButton("button_right", "RIGHT", room.adj_room_id[3], element, content, events);
 
     if (buttonUp)    element2.appendChild(buttonUp);
     if (buttonDown)  element2.appendChild(buttonDown);
     if (buttonLeft)  element2.appendChild(buttonLeft);
     if (buttonRight) element2.appendChild(buttonRight);
+
+    const element3 = document.getElementById('game_message');
+    element3.innerHTML = "";
+    assignRoomEvents(room.id, events, checkRooms);
   }
+}
+function checkRooms(id, events) {
+  const lockEvent = events.events[0].find((roomEvent) => roomEvent.id == id );
+  if (lockEvent) {
+    return lockEvent;
+  }
+  else {
+    const keyEvent = events.events[1].find((roomEvent) => roomEvent.id == id);
+    if (keyEvent)
+      return keyEvent;
+  }
+  return null;
+}
+function assignRoomEvents(id, events, callback) {
+  const roomEvent = callback(id, events);
+    if (roomEvent) {
+      if (roomEvent.isLockEvent) {
+        if (roomEvent.isLocked) {
+          console.log("Assigning Button events...");
+          assignLockEvent(roomEvent);
+        }
+      }
+      else if (!roomEvent.isLockEvent) {
+        assignKeyEvent(roomEvent);
+      }
+    }
+}
+function assignLockEvent(roomEvent) {
+  const holdButtons = createArray(roomEvent.idLockRoom);
+  console.log(holdButtons);
+  holdButtons.forEach((holdButton) => {
+    const oldButton = qs(holdButton);
+    const newButton = oldButton.cloneNode(true);
+    const element = document.getElementById('game_message');
+    newButton.addEventListener("touchend", e => {
+      e.preventDefault();
+      console.log(`Required Item: ${roomEvent.itemReq}`);
+      element.innerHTML = roomEvent.itemReqText;
+    });
+    newButton.addEventListener("click", e => {
+      console.log(`Required Item: ${roomEvent.itemReq}`);
+      element.innerHTML = roomEvent.itemReqText;
+    });
+    oldButton.parentNode.replaceChild(newButton, oldButton);
+  });
+
+}
+function assignKeyEvent(roomEvent) {
+  
 }
 
 // Creates and returns a directional button
-function createDirButton(name, direction, id, element, content) {
+function createDirButton(name, direction, id, element, content, events) {
   
   if (id) {  // Checks for an unusable direction; otherwise, return null
     const newButton = document.createElement('button');  //First, we create a button
@@ -101,13 +156,13 @@ function createDirButton(name, direction, id, element, content) {
       newButton.addEventListener("touchend", e => {
         e.preventDefault();
         currentRoomID = id;
-        console.log(currentRoomID);
-        renderRoomText(id, element, content);
+        // console.log(currentRoomID);
+        renderRoom(id, element, content, events);
       });
       newButton.addEventListener("click", e => {
         currentRoomID = id;
-        console.log(currentRoomID);
-        renderRoomText(id, element, content);
+        // console.log(currentRoomID);
+        renderRoom(id, element, content, events);
       });
       
       return newButton;  // Return the whole thing
@@ -116,11 +171,16 @@ function createDirButton(name, direction, id, element, content) {
 }
 
 export default class Rooms {
-  constructor(id, element) {
+  constructor(id, element, events) {
     this.content = createArray(data.rooms);
     this.roomID = id;
+    this.events = events;
+    console.log(events);
+
     currentRoomID = this.roomID;
-    console.log(this.content);
+    roomEvents = this.events;
+    // console.log(this.content);
+    
 
     this.displayText(element);
   }
@@ -130,8 +190,13 @@ export default class Rooms {
     console.log(this.roomID);
     return this.roomID;
   }
+  getEvents() {
+    this.events = roomEvents;
+    console.log(this.events);
+    return this.events;
+  }
 
   displayText(element) {
-    renderRoomText(this.roomID, element, this.content);
+    renderRoom(this.roomID, element, this.content, this.events);
   }
 }
