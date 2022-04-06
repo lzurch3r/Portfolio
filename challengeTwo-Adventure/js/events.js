@@ -7,7 +7,35 @@ const locks =
   "GGate": true,
   "Beast": false
 };
-const lockEvents = [ 
+const keys =[
+  {
+    "id": "item_01",
+    "name": "Yellow Key",
+    "isGet": false
+  },
+  {
+    "id": "item_02",
+    "name": "Purple Key",
+    "isGet": false
+  },
+  {
+    "id": "item_03",
+    "name": "Green Key",
+    "isGet": false
+  },
+  {
+    "id": "item_04",
+    "name": "Raw Meat",
+    "isGet": false
+  },
+  {
+    "id": "item_05",
+    "name": "Potion",
+    "isGet": false
+  },
+]
+const lockEvents = 
+[ 
   { 
     "id": "room_01",
     "idLockRoom": ["#button_up"],
@@ -41,7 +69,8 @@ const lockEvents = [
     "itemReqText": "The beast looks pretty ferocious. I wonder if you can pacify it with something tasty..."
   }
 ]
-const keyEvents = [
+const keyEvents = 
+[
   {
     "id": "room_06",
     "isLockEvent": false,
@@ -61,6 +90,7 @@ const keyEvents = [
 export default class Events {
   constructor() {
       this.locks = locks;
+      this.keys = keys;
       this.events = [lockEvents, keyEvents];
   }
 }

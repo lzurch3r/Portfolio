@@ -93,11 +93,13 @@ function renderRoom(id, element, content, events) {
   }
 }
 function checkRooms(id, events) {
+  // events.events[0] corresponds to Lock Event
   const lockEvent = events.events[0].find((roomEvent) => roomEvent.id == id );
   if (lockEvent) {
     return lockEvent;
   }
   else {
+    // events.events[1] corresponds to Key Event
     const keyEvent = events.events[1].find((roomEvent) => roomEvent.id == id);
     if (keyEvent)
       return keyEvent;
@@ -114,7 +116,8 @@ function assignRoomEvents(id, events, callback) {
         }
       }
       else if (!roomEvent.isLockEvent) {
-        assignKeyEvent(roomEvent);
+        const eventKey = events.keys.find((key) => key.id == roomEvent.itemGet);
+        assignKeyEvent(roomEvent, eventKey);
       }
     }
 }
@@ -138,12 +141,15 @@ function assignLockEvent(roomEvent) {
   });
 
 }
-function assignKeyEvent(roomEvent) {
-  
+function assignKeyEvent(roomEvent, key) {
+  const element = document.getElementById('game_message');
+  element.innerHTML = roomEvent.eventText;
+
+  key.isGet = true;
 }
 
 // Creates and returns a directional button
-function createDirButton(name, direction, id, element, content, events) {
+function createDirButton(name, direction, id) {
   
   if (id) {  // Checks for an unusable direction; otherwise, return null
     const newButton = document.createElement('button');  //First, we create a button
@@ -152,18 +158,18 @@ function createDirButton(name, direction, id, element, content, events) {
     newButton.setAttribute('class', "direction_buttons"); // and 'name'
     newButton.innerHTML = direction;  // Set button value
   
-      //Adds touch and click capabilities to newButton
-      newButton.addEventListener("touchend", e => {
-        e.preventDefault();
-        currentRoomID = id;
-        // console.log(currentRoomID);
-        renderRoom(id, element, content, events);
-      });
-      newButton.addEventListener("click", e => {
-        currentRoomID = id;
-        // console.log(currentRoomID);
-        renderRoom(id, element, content, events);
-      });
+      // //Adds touch and click capabilities to newButton
+      // newButton.addEventListener("touchend", e => {
+      //   e.preventDefault();
+      //   currentRoomID = id;
+      //   // console.log(currentRoomID);
+      //   renderRoom(id, element, content, events);
+      // });
+      // newButton.addEventListener("click", e => {
+      //   currentRoomID = id;
+      //   // console.log(currentRoomID);
+      //   renderRoom(id, element, content, events);
+      // });
       
       return newButton;  // Return the whole thing
   }
@@ -195,7 +201,6 @@ export default class Rooms {
     console.log(this.events);
     return this.events;
   }
-
   displayText(element) {
     renderRoom(this.roomID, element, this.content, this.events);
   }
