@@ -70,6 +70,9 @@ function renderRoomText(id, element, content) {
     if (buttonLeft)  element2.appendChild(buttonLeft);
     if (buttonRight) element2.appendChild(buttonRight);
   }
+
+  const element3 = document.getElementById('game_message');
+  element3.innerHTML = "";
 }
 // Creates and returns a directional button
 function createDirButton(name, direction, id, element, content) {
