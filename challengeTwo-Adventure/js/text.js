@@ -1,13 +1,10 @@
 /// JS file for reading data from JSON objects and exporting arrays of text objects
 import { createArray, parseJSON } from "./utils.js";
-
 const url = './JSON/text.json';
 const data = await parseJSON(url);
-
 function getID(container) {
   return container.id;
 }
-
 // Class for all essential text content from 'room_essential_text'
 export class RoomEssentialText {
   constructor() {

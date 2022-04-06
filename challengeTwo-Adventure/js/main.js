@@ -1,22 +1,19 @@
 import Adventure from "./adventure.js";
 import { qs, readFromLS, writeToLS, bindTouch } from "./utils.js";
-
-//*** DEBUG TESTING ***/
-const myAdventure = new Adventure("Lev", loadAdventure("Lev"));
-buildAdventure(myAdventure);
-/*** END DEBUG ***/
-
-// let myAdventure = null;
-// buildTitleScreen();
+// const myAdventure = new Adventure("Lev");
+// const key = "Lev";
+// const myAdventure = new Adventure(key);
+// saveAdventure(key, myAdventure);
+let myAdventure = null;
+buildTitleScreen();
 const btn = document.getElementById('btnClick');
 const image = document.getElementById('image');
-
 btn.addEventListener('click', async function () {
     const int = Math.floor(Math.random() * 1000);
     console.log(int);
     const url = `https://pokeapi.co/api/v2/item/${int}/`;
     let response = null;
-    
+
     while(!response) {
       response = await fetch(url)
       .then(response => response.json())
@@ -25,7 +22,7 @@ btn.addEventListener('click', async function () {
         return data;
       });
     }
-    
+
     image.src = response.sprites.default;
 });
 
@@ -34,45 +31,35 @@ function saveAdventure(key, data) {
   
   console.log(`Adventure saved; Key: ${key}`);
 }
-
 function loadAdventure(key) {
   const data = readFromLS(key);
   console.table(data);
-
   if (data)
     return data;
   else return null;
 }
 function deleteAdventure(key) {
   writeToLS(key, null);
-
   console.log(`Adventure '${key}' deleted`);
 }
-
 function buildAdventure(adventure) {
   if (adventure) {
     // console.log(adventure);
     adventure.init();
-
   const content =  {
     "inventory": {
-        "id": adventure.getCurrentInventory().id,
-        "content": adventure.getCurrentInventory().content
+        "id": adventure.inventory.id,
+        "content": adventure.inventory.content
     },
     "currentRoomID": {
         "roomID": adventure.getCurrentRoomID()
-    },
-    "events": adventure.getCurrentEvents()
+    }
   }
-
   saveAdventure(adventure.id, content);
-
   const btnSaveGame = createGameButton('save_game_button', "Save Game");
   const btnElement = document.getElementById('game_buttons');
   btnElement.innerHTML = "";
-
   btnElement.appendChild(btnSaveGame);
-
   bindTouch('#save_game_button', function() {
     const content = {
     "inventory": {
@@ -81,18 +68,16 @@ function buildAdventure(adventure) {
     },
     "currentRoomID": {
         "roomID": adventure.getCurrentRoomID()
-    },
-    "events": adventure.getCurrentEvents()
+    }
   }
       saveAdventure(adventure.id, content);
-    });
+    });  
   }
 }
 function createGameButton(id, html) {
   const newButton = document.createElement('button');
   newButton.setAttribute('id', id);
   newButton.innerHTML = html;
-
   return newButton; 
 }
 function buildTitleScreen() {
@@ -101,16 +86,12 @@ function buildTitleScreen() {
   
   const title = document.createElement('h1');
   title.setAttribute('id', 'title_screen_text');
-
   title.innerHTML = "Challenge Two - Adventure";
-
   // Build input and 'play' button
   const element2 = document.getElementById('game_buttons');
-
   const inputID = document.createElement('input');
   inputID.setAttribute('id', 'key_input');
   inputID.setAttribute('placeholder', "type adventure ID");
-
   const buttonNewGame  = createGameButton('new_game_button', "New Game");
   const buttonLoadGame = createGameButton('load_game_button', "Load Game");
   const buttonDelGame  = createGameButton('delete_game_button', "Delete Game");
@@ -118,13 +99,11 @@ function buildTitleScreen() {
 //     if (event.key === 'Enter') {
 //       event.preventDefault();
 //     const value = qs('#key_input').value;
-
 //     if (value)
 //       loadAdventure(value);
 //     else console.log(`Error: cannot find adventure`);
 //     }
 //   });
-
   element.appendChild(title);
   element2.appendChild(inputID);
   element2.appendChild(buttonNewGame);
@@ -134,7 +113,6 @@ function buildTitleScreen() {
   // Configure NEW GAME button
   bindTouch('#new_game_button', function () {
     const key = qs('#key_input').value;
-
     try {
       if (!key)
         throw new Error("Must enter a key in #key_input to make a New Game");
@@ -164,7 +142,6 @@ function buildTitleScreen() {
   // Configure LOAD GAME button
   bindTouch('#load_game_button', function () {
     const key = qs('#key_input').value;
-
     try {
       if (!key)
         throw new Error("Must enter a key in #key_input to load an existing game");
@@ -184,7 +161,6 @@ function buildTitleScreen() {
   // Configure DELETE GAME button
   bindTouch('#delete_game_button', function () {
     const key = qs('#key_input').value;
-
     try {
       if (!key)
         throw new Error("Must enter a key in #key_input to delete an existing game");
@@ -200,5 +176,4 @@ function buildTitleScreen() {
       throw error;
     }
   });
-
 }
