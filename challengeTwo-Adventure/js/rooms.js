@@ -33,7 +33,7 @@ function getNewRoom(id, content) {
 }
 
 function renderRoom(id, element, content, events) {
-  console.log(`MOVING to new room... ID: ${id}`);
+  console.log(`RENDERING new room... ID: ${id}`);
   const room = getNewRoom(id, content);
   element.innerHTML = "";
   if (room) {
@@ -87,9 +87,9 @@ function renderRoom(id, element, content, events) {
     if (buttonLeft)  element2.appendChild(buttonLeft);
     if (buttonRight) element2.appendChild(buttonRight);
 
-    const element3 = document.getElementById('game_message');
-    element3.innerHTML = "";
-    assignRoomEvents(room.id, events, checkRooms);
+    // const element3 = document.getElementById('game_message');
+    // element3.innerHTML = "";
+    // assignRoomEvents(room.id, events, checkRooms);
   }
 }
 function checkRooms(id, events) {
@@ -188,7 +188,7 @@ export default class Rooms {
     // console.log(this.content);
     
 
-    this.displayText(element);
+    this.displayText(this.roomID, element);
   }
 
   getRoomID() {
@@ -201,7 +201,7 @@ export default class Rooms {
     console.log(this.events);
     return this.events;
   }
-  displayText(element) {
-    renderRoom(this.roomID, element, this.content, this.events);
+  displayText(id, element) {
+    renderRoom(id, element, this.content, this.events);
   }
 }

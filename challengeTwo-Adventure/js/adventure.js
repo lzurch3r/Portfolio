@@ -4,6 +4,7 @@ import Events from "./events.js";
 import { bindTouch, createArray, qsAll } from "./utils.js";
 
 function assignButtonEvents(Room, element) {
+  console.log("Assigning button events...");
   // const element = document.getElementById('game_message');
   const newRoom = getNewRoom(Room.roomID, Room.content);
   console.log(newRoom.id);
@@ -11,12 +12,14 @@ function assignButtonEvents(Room, element) {
   console.log(buttons);
   buttons.forEach((btn) => {
     console.log(btn.id);
-    assignDirButton(btn.id, newRoom.adj_room_id);
+    assignDirButton(btn.id, newRoom.adj_room_id, Room.displayText, element);
   })
 
+  console.log("Button events assigned!");
   return Room;
 }
-function assignDirButton(id, rooms) {
+function assignDirButton(id, rooms, callback, element) {
+  console.log(`Assigning button: ${id}`);
   let adjRoomID = null;
   
   switch (id) {
@@ -41,9 +44,11 @@ function assignDirButton(id, rooms) {
       return;
     }
   }
+  console.log(element);
 
-  bindTouch(id, function () {
-    
+  bindTouch('#' + id, function () {
+    console.log("BindingTouch...");
+    callback(rooms[adjRoomID], element);
   });
 }
 function getNewRoom(id, content) {
@@ -124,7 +129,7 @@ export default class Adventure {
     console.log(`Current Room ID: ${this.currentRoom.getRoomID()}`);
 
     this.currentRoom = assignButtonEvents(this.currentRoom, document.getElementById("text_window"));
-    this.currentRoom.displayText(document.getElementById("text_window"));
+    // this.currentRoom.displayText(this.getCurrentRoomID(), document.getElementById("text_window"));
   }
   getCurrentInventory() {
     return this.inventory;
