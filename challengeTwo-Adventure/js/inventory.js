@@ -73,6 +73,7 @@ function renderInventory(element, content, images) {
   if (content.length > 0) {
     content.forEach((item) => {
       const htmlItem = document.createElement('li');
+      htmlItem.setAttribute('class', 'inventory_item');
       htmlItem.innerHTML = `${item.name}`;
 
       bindItemEvents(htmlItem, document.getElementById('item_description_window'), item);
@@ -113,6 +114,11 @@ export default class Inventory {
     this.images = createArray(myItems.data.images);
 
     this.addItem('item_00');
+    this.addItem('item_01');
+    this.addItem('item_02');
+    this.addItem('item_03');
+    this.addItem('item_04');
+    this.addItem('item_05');
     console.log(this.content);
   }
 

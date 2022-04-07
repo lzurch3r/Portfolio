@@ -2,28 +2,43 @@
   box-sizing:border-box;
 }
 body {
+  background-image: url('./assets/bg_cave.jpg');
   background-color: black;
+  background-size:auto;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  max-height: 700px;
 }
 body, button, input, ul, li {
   font-family:Georgia, 'Times New Roman', Times, serif;
   color:rgb(209, 125, 14);
+  max-width: 500px;
+  margin: auto auto;
 }
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
   text-align: center;
+  border-collapse: collapse;
 }
 li {
   display: inline;
   margin: 0;
+  border-collapse: collapse;
+}
+#game_window {
+  background-color: rgba(18, 0, 51, 0.336);
+  padding: 30px;
+  border-radius: 10em;
 }
 #room_header_window {
   text-align: center;
   margin: 1em 10%;
   border-bottom: 3px solid rgb(209, 125, 14);
 }
-#essential_text {
+/* Text */
+#essential_text, #start_text {
   text-align: center;
   font-size: 14pt;
   font-variant: small-caps;
@@ -31,6 +46,8 @@ li {
 #flavor_text, #npc_text {
   margin-left: 10px;
 }
+
+/* Movement buttons */
 #movement_options {
   display: grid;
   grid-template-rows: 20px 20px 20px;
@@ -56,6 +73,7 @@ li {
   grid-row: 3;
   grid-column: 2;
 }
+/* Inventory */
 #inventory_window {
   display: none;
   background-color: rgb(62, 26, 0);
@@ -64,10 +82,17 @@ li {
   border-radius: 1em;
 }
 #inventory_header {
-  margin: 0 20% 10px;
+  margin: 0 10px 10px;
   text-align: center;
   font-size: 18pt;
   border-bottom: 2px solid rgba(209, 125, 14, 0.584);
+}
+.inventory_item {
+  display: block;
+  padding: 5px 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 #item_description_window {
   display: none;
@@ -75,6 +100,7 @@ li {
   margin: 20px 0 0;
   border-top: 2px solid rgba(209, 125, 14, 0.584);
 }
+/* More buttons */
 #game_buttons, #image_button_window {
   display: grid;
   justify-content: center;
@@ -109,6 +135,10 @@ li {
 #delete_game_button {
   color: rgb(255, 6, 6);
 }
+#save_game_button {
+  color:rgb(57, 77, 255);
+}
+/* Saved Adventures list */
 #saved_adventures_header_window {
   margin: 2em 15%;
   text-align: center;
@@ -118,6 +148,12 @@ li {
   padding: 0;
   border-bottom: 2px dashed rgb(209, 125, 14);
 }
+#saved_adventures {
+  margin-left:auto;
+  margin-right:auto;
+  width:auto;
+  word-wrap: normal;
+}
 .adventure_keys {
   font-style: italic;
   padding: 0 10px;
@@ -125,13 +161,40 @@ li {
   border-left: 3px solid rgb(209, 125, 14);
   border-collapse: collapse;
 }
+/* For the Pokemon image */
 #btnClick {
   text-align: center;
   margin: 1em 0;
   font-size: 14pt;
 }
 #image {
-  height: 100px;
-  margin: 1em 20% 1em 20%;
-  float:right;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+}
+@media only screen and (min-width: 600px) {
+  body {
+    max-width: 900px;
+  }
+  #large_window {
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto 50%;
+  }
+  #text_window {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #movement_options {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #inventory_window {
+    margin-top: 0;
+    margin-bottom: auto;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    justify-content: center;
+  }
 }
