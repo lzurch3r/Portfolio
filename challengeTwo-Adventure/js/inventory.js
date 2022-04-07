@@ -30,6 +30,7 @@ function setItemDescription(event, element, content) {
   if (event.type == "mouseover" || event.type == "touchend") {
     const item = getItemDescription(content.description);
     element.appendChild(item);
+    element.style.display = "block";
   }
 }
 
@@ -61,6 +62,7 @@ function bindItemEvents(item, element, content) {
 
   item.addEventListener("mouseleave", e => {
     element.innerHTML = "";
+    element.style.display = "none";
     //console.log(e.type);
   });
 }

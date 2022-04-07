@@ -81,6 +81,7 @@ function createDirButton(name, direction, id, element, content) {
     const newButton = document.createElement('button');  //First, we create a button
     newButton.setAttribute('type', 'button');  // Set attributes 'type'
     newButton.setAttribute('id', name);        //   and 'id'
+    newButton.setAttribute('class', 'movement_buttons');
     newButton.innerHTML = direction;  // Set button value
   
       //Adds touch and click capabilities to newButton

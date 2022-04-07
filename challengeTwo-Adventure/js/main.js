@@ -79,12 +79,15 @@ function buildAdventure(adventure) {
     });
   }
 
-  // Lastly, gets rid of the "Saved Adventures" List
+  // Lastly, gets rid of the "Saved Adventures" List and brings back movement options
+  document.getElementById('movement_options').style.display = "grid";
+  document.getElementById('inventory_window').style.display = "block";
   document.getElementById('saved_adventures_window').innerHTML = "";
 }
 function createGameButton(id, html) {
   const newButton = document.createElement('button');
   newButton.setAttribute('id', id);
+  newButton.setAttribute('class', 'data_buttons');
   newButton.innerHTML = html;
   return newButton; 
 }
@@ -118,7 +121,7 @@ function showAdventureList() {
     savedAdventuresHeader.innerHTML = "No Saved Adventures";
 
     savedAdventuresWindow.appendChild(savedAdventuresHeader);
-    
+
     const savedAdventuresList = document.getElementById('saved_adventures');
     savedAdventuresList.innerHTML = "";
   }
@@ -129,7 +132,7 @@ function buildTitleScreen() {
   
   const title = document.createElement('h1');
   title.setAttribute('id', 'title_screen_text');
-  title.innerHTML = "Challenge Two - Adventure";
+  title.innerHTML = "Adventure (Beta)";
   // Build input and 'play' button
   const element2 = document.getElementById('game_buttons');
   const inputID = document.createElement('input');
@@ -145,6 +148,10 @@ function buildTitleScreen() {
   element2.appendChild(buttonNewGame);
   element2.appendChild(buttonLoadGame);
   element2.appendChild(buttonDelGame);
+
+  // Get rid of the gap caused by the movement buttons
+  document.getElementById('movement_options').style.display = "none";
+  document.getElementById('inventory_window').style.display = "none";
   
   // Configure NEW GAME button
   bindTouch('#new_game_button', function () {
