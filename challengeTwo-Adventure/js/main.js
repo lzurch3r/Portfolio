@@ -97,33 +97,38 @@ function showAdventureList() {
   savedAdventuresWindow.innerHTML = "";
 
   adventureKeys = loadAdventure("Adventure Keys");
-  if (adventureKeys.length > 0) {
-    const savedAdventuresHeader = document.createElement('h3');
-    savedAdventuresHeader.setAttribute('id', 'saved_adventures_header');
-    savedAdventuresHeader.innerHTML = "Saved Adventures";
-  
-    savedAdventuresWindow.appendChild(savedAdventuresHeader);
-  
-    // adds Adventure Keys to a list
-    const savedAdventuresList = document.getElementById('saved_adventures');
-    savedAdventuresList.innerHTML = "";
-    adventureKeys.forEach((key) => {
-      const item = document.createElement('li');
-      item.setAttribute('class', 'adventure_keys');
-      item.innerHTML = key;
-  
-      savedAdventuresList.appendChild(item);
-    })
+  if (!adventureKeys) {
+    adventureKeys = [];
   }
-  else {
-    const savedAdventuresHeader = document.createElement('h3');
-    savedAdventuresHeader.setAttribute('id', 'saved_adventures_header');
-    savedAdventuresHeader.innerHTML = "No Saved Adventures";
-
-    savedAdventuresWindow.appendChild(savedAdventuresHeader);
-
-    const savedAdventuresList = document.getElementById('saved_adventures');
-    savedAdventuresList.innerHTML = "";
+  else if (adventureKeys) {
+    if (adventureKeys.length > 0) {
+      const savedAdventuresHeader = document.createElement('h3');
+      savedAdventuresHeader.setAttribute('id', 'saved_adventures_header');
+      savedAdventuresHeader.innerHTML = "Saved Adventures";
+    
+      savedAdventuresWindow.appendChild(savedAdventuresHeader);
+    
+      // adds Adventure Keys to a list
+      const savedAdventuresList = document.getElementById('saved_adventures');
+      savedAdventuresList.innerHTML = "";
+      adventureKeys.forEach((key) => {
+        const item = document.createElement('li');
+        item.setAttribute('class', 'adventure_keys');
+        item.innerHTML = key;
+    
+        savedAdventuresList.appendChild(item);
+      })
+    }
+    else {
+      const savedAdventuresHeader = document.createElement('h3');
+      savedAdventuresHeader.setAttribute('id', 'saved_adventures_header');
+      savedAdventuresHeader.innerHTML = "No Saved Adventures";
+  
+      savedAdventuresWindow.appendChild(savedAdventuresHeader);
+  
+      const savedAdventuresList = document.getElementById('saved_adventures');
+      savedAdventuresList.innerHTML = "";
+    }
   }
 }
 function buildTitleScreen() {
@@ -144,7 +149,7 @@ function buildTitleScreen() {
 
   // Add all our items to the appropriate elements
   element.appendChild(title);  // Adds to element with id 'room_header_window'
-  element2.appendChild(inputID);       // The following ad to element 'game_buttons'
+  element2.appendChild(inputID);       // Add the following items to element 'game_buttons'
   element2.appendChild(buttonNewGame);
   element2.appendChild(buttonLoadGame);
   element2.appendChild(buttonDelGame);
